@@ -23,9 +23,10 @@ return (
       quality={95}
       formats={["AUTO", "WEBP", "AVIF"]}
       alt="A Gatsby astronaut"
-      className="mb-6"
+      className="mb-6 mx-auto"
     />
     <p>
+      <Link to="/the-chosen-one/" className={linkCss}>Go to The Chosen One</Link> <br />
       <Link to="/page-2/" className={linkCss}>Go to page 2</Link> <br />
       <Link to="/using-typescript/" className={linkCss}>Go to "Using TypeScript"</Link>
     </p>
