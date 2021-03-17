@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> it should render 1`] = `
+<footer
+  class="fixed bottom-0 w-full bg-black-100 text-black-500 text-sm text-right py-12 px-6 sm:px-8 h-card"
+  data-testid="app-footer"
+>
+  © 
+  2021
+  , Built with
+   
+  <a
+    href="https://www.gatsbyjs.com"
+  >
+    Gatsby
+  </a>
+</footer>
+`;
