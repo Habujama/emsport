@@ -1,7 +1,6 @@
 import { FC, useRef } from 'react'
 import { useClickAway } from 'react-use'
 import classNames from 'classnames'
-import { StaticImage } from "gatsby-plugin-image"
 
 
 import Button from "./button/Button"
@@ -28,14 +27,6 @@ const Modal: FC<Props> = ({
 
   return (
     <div className={containerCss} ref={clickRef} data-testid="modal-container">
-      <StaticImage
-        src="../../assets/the-chosen-one.jpg"
-        height={700}
-        quality={100}
-        formats={["AUTO", "WEBP", "AVIF"]}
-        alt="A Gatsby astronaut"
-        className="flex mb-10 mx-auto"
-        />
         <div className="text-center">
           <Button
             onClick={toggle}

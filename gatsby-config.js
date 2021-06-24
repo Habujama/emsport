@@ -2,8 +2,8 @@ const tailwindConfig = require('./tailwind.config.js')
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `eM Sport Slaný`,
+    description: `Kola, lyže, bajky pro všechny sporťáky.`,
     author: `@gatsbyjs`,
     keywords: ['fun'],
     lang: 'cs',
@@ -20,7 +20,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
-        icon: 'src/assets/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/assets/favicona.png', // This path is relative to the root of the site.
         icon_options: {
           // For all the options available, please see the additional resources below.
           purpose: 'any maskable',
@@ -30,15 +30,22 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-webfonts',
       options: {
-        fonts: {
-          google: [
-            {
-              family: 'Roboto',
-              subsets: ['latin-ext'],
-              variants: ['100', '300', '400', '500', '700', '900'],
-              strategy: 'cdn',
-            },
-          ],
+            fonts: {
+              google: [
+                {
+                  family: 'Roboto',
+                  subsets: ['latin-ext'],
+                  // 100, 300, 700, 900 are Rentier specific
+                  variants: ['100', '300', '400', '500', '700', '900'],
+                  strategy: 'cdn',
+                },
+                {
+                  family: 'Barlow Semi Condensed',
+                  subsets: ['latin-ext'],
+                  variants: ['100','300', '400','500','800'],
+                  strategy: 'cdn',
+                },
+              ],
         },
       },
     },
@@ -111,7 +118,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/favicona.png`, // This path is relative to the root of the site.
         icon_options: {
           purpose: 'any maskable',
         },

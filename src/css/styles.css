@@ -8,3 +8,7 @@ body {
   color: #121212;
   background-color: #ffffff;
 }
+
+.spinner {
+  animation: spin 20s linear infinite;
+}
