@@ -2,17 +2,159 @@
 
 exports[`<Footer /> it should render 1`] = `
 <footer
-  class="fixed bottom-0 w-full bg-white shadow-md text-black-500 text-sm text-right py-12 px-6 sm:px-8 h-card"
+  class="w-full px-8 py-12 bg-blue-900 text-white text-sm h-card"
   data-testid="app-footer"
 >
-  © 
-  2021
-  , Built with
-   
-  <a
-    href="https://www.gatsbyjs.com"
+  <div
+    class="grid grid-rows-4 grid-cols-1 sm:grid-rows-1 sm:grid-cols-4 gap-y-2 sm:gap-x-4 max-w-screen-xl"
   >
-    Gatsby
-  </a>
+    <div
+      class="row-start-2 sm:row-start-1 row-span-1 sm:col-start-1 col-span-1 flex flex-col"
+    >
+      <address
+        class="not-italic"
+        id="kontakt"
+      >
+        <h4
+          class="text-lg font-bold mb-2"
+        >
+          eM Sport Slaný
+        </h4>
+        <p>
+          Třebízského 161
+        </p>
+        <p>
+          Slaný 274 01
+        </p>
+        <p>
+          IČ: 71404201
+        </p>
+        <p
+          class="my-2"
+        >
+          Tel.: 
+          <a
+            class="underline hover:no-underline"
+            href="tel:775710011"
+          >
+            +420 775 710 011
+          </a>
+        </p>
+        <p>
+          E-mail:
+          <br />
+          <a
+            class="underline hover:no-underline"
+            href="mailto:info@kolaslany.cz?subject=Dotaz z webu"
+          >
+            info@kolaslany.cz
+          </a>
+          <br />
+          <a
+            class="underline hover:no-underline"
+            href="mailto:info@emsportslany.cz?subject=Dotaz z webu"
+          >
+            info@emsportslany.cz
+          </a>
+        </p>
+      </address>
+    </div>
+    <div
+      class="row-start-1 row-span-1 sm:col-start-2 col-span-1 flex flex-col"
+    >
+      <h4
+        class="text-lg font-bold mb-2"
+      >
+        Otevírací doba
+      </h4>
+      <dl
+        class="flex flex-row flex-wrap after:block"
+      >
+        <dt
+          class="flex-shrink-0 flex-grow-0 w-1/3"
+        >
+          Pondělí
+        </dt>
+        <dd
+          class="flex-shrink-0 flex-grow-0 ml-auto text-left w-2/3"
+        >
+          9.00 – 17.00
+        </dd>
+        <dt
+          class="flex-shrink-0 flex-grow-0 w-1/3"
+        >
+          Úterý
+        </dt>
+        <dd
+          class="flex-shrink-0 flex-grow-0 ml-auto text-left w-2/3"
+        >
+          9.00 – 17.00
+        </dd>
+        <dt
+          class="flex-shrink-0 flex-grow-0 w-1/3"
+        >
+          Středa
+        </dt>
+        <dd
+          class="flex-shrink-0 flex-grow-0 ml-auto text-left w-2/3"
+        >
+          9.00 – 17.00
+        </dd>
+        <dt
+          class="flex-shrink-0 flex-grow-0 w-1/3"
+        >
+          Čtvrtek
+        </dt>
+        <dd
+          class="flex-shrink-0 flex-grow-0 ml-auto text-left w-2/3"
+        >
+          9.00 – 18.00
+        </dd>
+        <dt
+          class="flex-shrink-0 flex-grow-0 w-1/3"
+        >
+          Pátek
+        </dt>
+        <dd
+          class="flex-shrink-0 flex-grow-0 ml-auto text-left w-2/3"
+        >
+          9.00 – 17.00
+        </dd>
+        <dt
+          class="flex-shrink-0 flex-grow-0 w-1/3"
+        >
+          Sobota
+        </dt>
+        <dd
+          class="flex-shrink-0 flex-grow-0 ml-auto text-left w-2/3"
+        >
+          8.30 – 11.30
+        </dd>
+        <dt
+          class="flex-shrink-0 flex-grow-0 w-1/3"
+        >
+          Neděle
+        </dt>
+        <dd
+          class="flex-shrink-0 flex-grow-0 ml-auto text-left w-2/3"
+        >
+          Máme zavřeno
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div
+    class="text-right pt-4"
+  >
+    <a
+      href="https://www.gatsbyjs.com"
+    >
+      Gatsby JS
+    </a>
+     
+    © 
+    2021
+    ,
+  </div>
 </footer>
 `;
