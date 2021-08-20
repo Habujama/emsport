@@ -35,16 +35,24 @@ const OpeningHours:FC = () => {
           />
       }
               <span className="flex flex-col">
-              <h3 className="text-base text-center pb-2">
+              <h3 className="text-base text-center">
               {hourRightNow > openingHours.start && hourRightNow < openingHours.end ?
                 "Teď máme otevřeno" : "Teď máme zavřeno"
               }
               </h3>
-              <h3 className="text-lg flex text-center">
               {hourRightNow > openingHours.start && hourRightNow < openingHours.end ?
-                "775 710 011" : "info@emsportslany.cz"
+                <a 
+                href="tel:775 710 011"
+                className="text-lg flex text-center hover:text-blue-600">
+                  775 710 011
+                </a>
+                :
+                <a
+                  href="mailto:info@emsportslany.cz"
+                  className="text-lg flex text-center hover:text-blue-600">
+                    info@emsportslany.cz
+                </a>
               }
-              </h3>
               </span>
         </>
     )

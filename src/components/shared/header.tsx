@@ -1,14 +1,10 @@
 import { FC, useState, useEffect } from 'react'
-import { useMedia } from 'react-use'
 import { motion } from 'framer-motion'
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import className from 'classnames'
-import theme from 'tailwindcss/defaultTheme'
+import classNames from 'classnames'
 
 import OpeningHours from "../opening-hours/opening-hours"
-
-const { screens } = theme
 
 interface Props {
   siteTitle: string
@@ -16,25 +12,12 @@ interface Props {
 
 const Header:FC<Props> = ({siteTitle}) => {
 
-  const isNotMobile = useMedia(`(min-width: ${screens.md})`)
-
-  const cardCss = className(
-    'whitespace-nowrap rounded-md',
-    'hover:bg-blue-50 ease-in-out duration-500',
-    'py-4 sm:px-8 px-4'
-  )
-
-  const linkCss = className(
-    'focus:outline-none focus:ring-1 focus:transition-shadow focus:rounded-md',
-    'active:transition-shadow active:duration-200 active:shadow-focus-blue-100',
-  )
-
-  const [shouldShowContactUs, setshouldShowContactUs] = useState(false)
+  const [isScrolling, setIsScrolling] = useState(false)
   useEffect(() => {
     function handleScroll() {
       const yPos = window.scrollY
       const isScrollingDown = yPos > 0
-      setshouldShowContactUs(isScrollingDown)
+      setIsScrolling(isScrollingDown)
     }
     window.addEventListener('scroll', handleScroll)
 
@@ -45,43 +28,59 @@ const Header:FC<Props> = ({siteTitle}) => {
 
   const headerAnimation = { type: 'spring', stiffness: 100, duration: 2 }
 
+  const cardCss = classNames(
+    'whitespace-nowrap rounded-md',
+    'hover:bg-blue-800 ease-in-out duration-500',
+    'py-4 sm:px-8 px-4'
+  )
+
+  const linkCss = classNames(
+    'focus:outline-none focus:ring-1 focus:transition-shadow focus:rounded-md',
+    'active:transition-shadow active:duration-200 active:shadow-focus-blue-100',
+  )
+  
+  const headerCss = classNames(
+    'w-full font-barlow text-white text-xl top-0 z-10',
+    {
+      'bg-header-gradient fixed text-lg shadow-md py-2': isScrolling,
+      'py-4': !isScrolling,
+    },
+    )
+
   return (
     <motion.header 
-        className="w-full bg-white font-barlow text-blue-900 text-4xl top-0 py-4 z-10"
+        className={headerCss}
         data-testid="header"
         transition={headerAnimation}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
     >
       <motion.div
-        className="flex flex-col sm:flex-row justify-between items-center md:pr-10 md:pl-4 px-4"
+        className="flex flex-col sm:flex-row justify-between items-center px-4"
       >
         <Link
           to="/"
-          className={linkCss}
+          className={`${linkCss} sm:px-8 px-4`}
         >
-          <motion.div 
-            className={cardCss}
-          >
             <StaticImage
-              src="../../assets/logo.png"
+              src="../../assets/logo-bile.png"
               alt={siteTitle}
               title={siteTitle}
-              width={200}
+              height={50}
               placeholder="blurred"
               layout="fixed"
+              
             />
-          </motion.div>
         </Link>
-      <span className="flex flex-col sm:flex-row items-center">
+      <span className="flex flex-col sm:flex-row items-center self-center">
         <Link 
           to="/"
           className={linkCss}
         >
           <motion.div
-          className={`${cardCss} hover:py-6`}
+          className={`${cardCss} hover:py-4`}
           >
-            <h1 className="text-xl lg:text-2xl">
+            <h1 className="">
               Servis
             </h1>
           </motion.div>
@@ -92,9 +91,9 @@ const Header:FC<Props> = ({siteTitle}) => {
           className={linkCss}
         >
           <motion.div
-          className={`${cardCss} hover:py-6`}
+          className={`${cardCss} hover:py-4`}
           >
-            <h1 className="text-xl lg:text-2xl">
+            <h1 className="">
               Půjčovna
             </h1>
           </motion.div>
@@ -105,9 +104,9 @@ const Header:FC<Props> = ({siteTitle}) => {
           className={linkCss}
         >
           <motion.div
-          className={`${cardCss} hover:py-6`}
+          className={`${cardCss} hover:py-4`}
           >
-            <h1 className="text-xl lg:text-2xl">
+            <h1 className="">
               E-shop
             </h1>
           </motion.div>
@@ -118,28 +117,20 @@ const Header:FC<Props> = ({siteTitle}) => {
             className={linkCss}
           >
             <motion.div
-            className={`${cardCss} hover:py-6`}
+            className={`${cardCss} hover:py-4`}
             >
-              <h1 className="text-xl lg:text-2xl">
+              <h1 className="">
                 Kontakt
               </h1>
             </motion.div>
           </Link>
       </span>
+            <motion.div
+            className={`flex`}
+            >
+              <OpeningHours />
+            </motion.div>
       </motion.div>
-      {isNotMobile ? 
-        <Link to="#kontakt" >
-          <motion.div
-              className="flex fixed right-0 bg-white rounded-md whitespace-nowrap py-4 px-8"
-              animate={{ opacity: shouldShowContactUs ? 1 : 0 }}
-              initial={{ opacity: 0}}
-              >
-                  <OpeningHours />
-          </motion.div>
-        </Link>
-      : null
-      }
-      
     </motion.header>
   )
 }

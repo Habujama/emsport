@@ -12,7 +12,8 @@ module.exports = {
       },
       extend: {
         backgroundImage: () => ({
-          'gradient-1': `linear-gradient(to bottom right, #dbeafe, #ffffff);`,
+          'body-gradient': `radial-gradient(circle, rgba(79,79,79,1) 1%, rgba(24,25,25,1) 89%);`,
+          'header-gradient': `linear-gradient(90deg, rgba(100,100,100, 0.5) 0%, rgba(24,25,25,0.8) 100%);`,
         }),
       },
     },
