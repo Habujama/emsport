@@ -13,7 +13,7 @@ const OpeningHours:FC = () => {
   const timeRightNow = hourRightNow + minutesRightNow/60
   
     return(
-        <>
+      <div className="flex mt-6 sm:mt-0 sm:pr-8">
         {timeRightNow > openingHours.start && timeRightNow < openingHours.end ?
           <StaticImage
             src="../../assets/online.svg"
@@ -54,7 +54,7 @@ const OpeningHours:FC = () => {
                 </a>
               }
               </span>
-        </>
+        </div>
     )
 }
 

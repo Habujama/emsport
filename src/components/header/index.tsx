@@ -1,14 +1,19 @@
 import { FC, useState, useEffect } from 'react'
+import { useMedia } from 'react-use'
 import { motion } from 'framer-motion'
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import classNames from 'classnames'
+import theme from 'tailwindcss/defaultTheme'
 
-import OpeningHours from "../opening-hours/opening-hours"
+import PCMenu from "./pc-menu"
+import MobileMenu from './mobile-menu'
 
 interface Props {
   siteTitle: string
 }
+
+const { screens } = theme
 
 const Header:FC<Props> = ({siteTitle}) => {
 
@@ -28,11 +33,7 @@ const Header:FC<Props> = ({siteTitle}) => {
 
   const headerAnimation = { type: 'spring', stiffness: 100, duration: 2 }
 
-  const cardCss = classNames(
-    'whitespace-nowrap rounded-md',
-    'hover:bg-blue-800 ease-in-out duration-500',
-    'py-4 sm:px-8 px-4'
-  )
+  const isNotMobile = useMedia(`(min-width: ${screens.md})`)
 
   const linkCss = classNames(
     'focus:outline-none focus:ring-1 focus:transition-shadow focus:rounded-md',
@@ -42,7 +43,8 @@ const Header:FC<Props> = ({siteTitle}) => {
   const headerCss = classNames(
     'w-full font-barlow text-white text-xl top-0 z-10',
     {
-      'bg-header-gradient fixed text-lg shadow-md py-2': isScrolling,
+      'fixed bg-header-gradient text-lg shadow-md py-2': isScrolling && isNotMobile,
+      'fixed bg-black-600': !isNotMobile,
       'py-4': !isScrolling,
     },
     )
@@ -60,7 +62,7 @@ const Header:FC<Props> = ({siteTitle}) => {
       >
         <Link
           to="/"
-          className={`${linkCss} sm:px-8 px-4`}
+          className={`${linkCss} pt-4 sm:py-4 sm:pt-0 sm:pl-8`}
         >
             <StaticImage
               src="../../assets/logo-bile.png"
@@ -72,64 +74,9 @@ const Header:FC<Props> = ({siteTitle}) => {
               
             />
         </Link>
-      <span className="flex flex-col sm:flex-row items-center self-center">
-        <Link 
-          to="/"
-          className={linkCss}
-        >
-          <motion.div
-          className={`${cardCss} hover:py-4`}
-          >
-            <h1 className="">
-              Servis
-            </h1>
-          </motion.div>
-        </Link>
-
-        <Link 
-          to="/"
-          className={linkCss}
-        >
-          <motion.div
-          className={`${cardCss} hover:py-4`}
-          >
-            <h1 className="">
-              Půjčovna
-            </h1>
-          </motion.div>
-        </Link>
-
-        <Link 
-          to="/"
-          className={linkCss}
-        >
-          <motion.div
-          className={`${cardCss} hover:py-4`}
-          >
-            <h1 className="">
-              E-shop
-            </h1>
-          </motion.div>
-        </Link>
-       
-          <Link 
-            to="#kontakt"
-            className={linkCss}
-          >
-            <motion.div
-            className={`${cardCss} hover:py-4`}
-            >
-              <h1 className="">
-                Kontakt
-              </h1>
-            </motion.div>
-          </Link>
-      </span>
-            <motion.div
-            className={`flex`}
-            >
-              <OpeningHours />
-            </motion.div>
+        {isNotMobile ? 
+          <PCMenu /> : <MobileMenu />
+        }
       </motion.div>
     </motion.header>
   )

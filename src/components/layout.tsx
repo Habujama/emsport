@@ -1,14 +1,14 @@
 import { FC } from 'react'
-import { 
+/* import { 
   motion, 
   useViewportScroll,
   useSpring,
   useTransform
-} from 'framer-motion'
+} from 'framer-motion' */
 import { useStaticQuery, graphql } from "gatsby"
 
 
-import Header from "./shared/header"
+import Header from "../components/header"
 import Footer from './shared/footer'
 
 const Layout:FC = ({ children }) => {
