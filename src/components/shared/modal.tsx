@@ -2,8 +2,7 @@ import { FC, useRef } from 'react'
 import { useClickAway } from 'react-use'
 import classNames from 'classnames'
 
-
-import Button from "./button/Button"
+import Button from './button/Button'
 
 export interface Props {
   toggle(): void
@@ -12,14 +11,10 @@ export interface Props {
   top?: string
 }
 
-const Modal: FC<Props> = ({
-  children,
-  toggle,
-  className,
-}) => {
+const Modal: FC<Props> = ({ children, toggle, className }) => {
   const containerCss = classNames(
     'fixed lg:w-1/2 left-1/2 top-1/2 bg-white shadow-md rounded-2xl transform -translate-y-1/2 -translate-x-1/2  z-40 px-24 pt-16 pb-20',
-    className,
+    className
   )
 
   const clickRef = useRef()
@@ -27,14 +22,13 @@ const Modal: FC<Props> = ({
 
   return (
     <div className={containerCss} ref={clickRef} data-testid="modal-container">
-        <div className="text-center">
-          <Button
-            onClick={toggle}
-            size='large'
-            label='Hide The Chosen One'
-          >
-          </Button>
-        </div>
+      <div className="text-center">
+        <Button
+          onClick={toggle}
+          size="large"
+          label="Hide The Chosen One"
+        ></Button>
+      </div>
       {children}
     </div>
   )

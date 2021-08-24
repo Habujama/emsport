@@ -30,22 +30,22 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-webfonts',
       options: {
-            fonts: {
-              google: [
-                {
-                  family: 'Roboto',
-                  subsets: ['latin-ext'],
-                  // 100, 300, 700, 900 are Rentier specific
-                  variants: ['100', '300', '400', '500', '700', '900'],
-                  strategy: 'cdn',
-                },
-                {
-                  family: 'Barlow Semi Condensed',
-                  subsets: ['latin-ext'],
-                  variants: ['100','300', '400','500','800'],
-                  strategy: 'cdn',
-                },
-              ],
+        fonts: {
+          google: [
+            {
+              family: 'Roboto',
+              subsets: ['latin-ext'],
+              // 100, 300, 700, 900 are Rentier specific
+              variants: ['100', '300', '400', '500', '700', '900'],
+              strategy: 'cdn',
+            },
+            {
+              family: 'Barlow Semi Condensed',
+              subsets: ['latin-ext'],
+              variants: ['100', '300', '400', '500', '800'],
+              strategy: 'cdn',
+            },
+          ],
         },
       },
     },
@@ -87,9 +87,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-loadable-components-ssr`,
       options: {
-          // Whether replaceHydrateFunction should call ReactDOM.hydrate or ReactDOM.render
-          // Defaults to ReactDOM.render on develop and ReactDOM.hydrate on build
-          useHydrate: true,
+        // Whether replaceHydrateFunction should call ReactDOM.hydrate or ReactDOM.render
+        // Defaults to ReactDOM.render on develop and ReactDOM.hydrate on build
+        useHydrate: true,
       },
     },
     {

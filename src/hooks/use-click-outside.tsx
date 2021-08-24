@@ -21,4 +21,4 @@ const useClickOutside: ClickOutside = (ref, callback) => {
   }, [handleClick])
 }
 
-export default useClickOutside 
+export default useClickOutside
