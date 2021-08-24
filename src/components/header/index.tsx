@@ -7,7 +7,7 @@ import classNames from 'classnames'
 import theme from 'tailwindcss/defaultTheme'
 
 import PCMenu from "./pc-menu"
-import MobileMenu from './mobile-menu'
+import MobileNav from "../mobile-nav" 
 
 interface Props {
   siteTitle: string
@@ -33,7 +33,7 @@ const Header:FC<Props> = ({siteTitle}) => {
 
   const headerAnimation = { type: 'spring', stiffness: 100, duration: 2 }
 
-  const isNotMobile = useMedia(`(min-width: ${screens.md})`)
+  const isNotMobile = useMedia(`(min-width: ${screens.lg})`)
 
   const linkCss = classNames(
     'focus:outline-none focus:ring-1 focus:transition-shadow focus:rounded-md',
@@ -41,11 +41,11 @@ const Header:FC<Props> = ({siteTitle}) => {
   )
   
   const headerCss = classNames(
-    'w-full font-barlow text-white text-xl top-0 z-10',
+    'sticky flex top-0 font-barlow text-lg text-white pl-6 pr-6 md:pr-2 z-30',
     {
-      'fixed bg-header-gradient text-lg shadow-md py-2': isScrolling && isNotMobile,
-      'fixed bg-black-600': !isNotMobile,
-      'py-4': !isScrolling,
+      'fixed bg-header-gradient text-md shadow-md py-4': isScrolling && isNotMobile,
+      'fixed  bg-black-900': !isNotMobile,
+      'py-6': !isScrolling,
     },
     )
 
@@ -54,15 +54,13 @@ const Header:FC<Props> = ({siteTitle}) => {
         className={headerCss}
         data-testid="header"
         transition={headerAnimation}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
     >
-      <motion.div
-        className="flex flex-col sm:flex-row justify-between items-center px-4"
-      >
+      <div  className="flex-1 flex items-center justify-between max-w-laptop mx-auto">
         <Link
           to="/"
-          className={`${linkCss} pt-4 sm:py-4 sm:pt-0 sm:pl-8`}
+          className={`${linkCss} mt-4 lg:mt-0 lg:pl-8`}
         >
             <StaticImage
               src="../../assets/logo-bile.png"
@@ -75,9 +73,9 @@ const Header:FC<Props> = ({siteTitle}) => {
             />
         </Link>
         {isNotMobile ? 
-          <PCMenu /> : <MobileMenu />
+          <PCMenu /> : <MobileNav />
         }
-      </motion.div>
+      </div>
     </motion.header>
   )
 }

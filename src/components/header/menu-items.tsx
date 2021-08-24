@@ -1,6 +1,6 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { Link } from "gatsby"
-import { motion } from 'framer-motion'
+import { motion, usePresence } from 'framer-motion'
 import classNames from 'classnames'
 
 import OpeningHours from '../../components/opening-hours/opening-hours'
@@ -8,14 +8,12 @@ import OpeningHours from '../../components/opening-hours/opening-hours'
 const variants = {
     open: {
       y: 0,
-      opacity: 1,
       transition: {
         y: { stiffness: 1000, velocity: -100 }
       }
     },
     closed: {
       y: -50,
-      opacity: 0,
       transition: {
         y: { stiffness: 1000 }
       }
@@ -24,6 +22,7 @@ const variants = {
 
   interface Props {
     toggle: any
+    ref?: any
   }
 
 
@@ -37,6 +36,13 @@ const MenuItems:FC<Props> = ({ toggle }) => {
         'focus:outline-none focus:ring-1 focus:transition-shadow focus:rounded-md',
         'active:transition-shadow active:duration-200 active:shadow-focus-blue-100',
       )
+
+      const [isPresent, safeToRemove] = usePresence()
+
+      useEffect(() => {
+        !isPresent && setTimeout(safeToRemove, 1000)
+      }, [isPresent, safeToRemove])
+    
 return (
     <motion.div
       variants={variants}
@@ -45,7 +51,6 @@ return (
         <Link 
           to="/"
           className={linkCss}
-          
         >
           <motion.div
           className={`${cardCss} hover:py-4`}
@@ -68,7 +73,7 @@ return (
           whileTap={{ scale: 0.95 }}
           onClick={toggle}
           >
-              Mobile
+              Půjčovna
           </motion.div>
         </Link>
 

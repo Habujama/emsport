@@ -12,11 +12,16 @@ const Path = props => (
 )
 
 interface Props {
-  toggle: void
+  toggle(): void
 }
 
-const MenuToggle: FC<Props> = ({ toggle }) => (
-  <button onClick={toggle} className="active:outline-none focus:outline-none rounded mx-auto mt-4">
+const Hamburger: FC<Props> = ({ toggle }) => {
+
+  return (
+  <button
+    onClick={toggle}
+    className="active:outline-none focus:outline-none rounded mx-auto mt-4"
+  >
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         variants={{
@@ -40,6 +45,7 @@ const MenuToggle: FC<Props> = ({ toggle }) => (
       />
     </svg>
   </button>
-)
+  )
+}
 
-export default MenuToggle
+export default Hamburger

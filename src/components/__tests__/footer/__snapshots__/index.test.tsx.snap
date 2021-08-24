@@ -2,7 +2,7 @@
 
 exports[`<Footer /> it should render 1`] = `
 <footer
-  class="w-full px-8 py-12 bg-body-gradient text-white text-sm h-card"
+  class="w-full px-8 py-12 bg-black-900 text-white text-sm h-card"
   data-testid="app-footer"
 >
   <div
