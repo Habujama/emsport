@@ -4,7 +4,7 @@ import className from 'classnames' */
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Hero from '../components/hero'
+import Hero from '../components/hero/index'
 
 const IndexPage: FC = () => {
   /*  const linkCss = className(
@@ -14,8 +14,6 @@ const IndexPage: FC = () => {
   return (
     <Layout>
       <SEO title="Hlavní stránka" />
-      <Hero />
-      <Hero />
       <Hero />
     </Layout>
   )

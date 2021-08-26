@@ -43,7 +43,7 @@ const Header: FC<Props> = ({ siteTitle }) => {
     'sticky flex top-0 font-barlow text-lg text-white px-6 z-30',
     {
       'bg-header-gradient text-md shadow-md py-4': isScrolling && isNotMobile,
-      'bg-black-900': !isNotMobile,
+      'bg-black-900': isScrolling && !isNotMobile,
       'py-6': !isScrolling,
     }
   )
