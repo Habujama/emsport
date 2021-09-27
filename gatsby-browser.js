@@ -1,7 +1,3 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import './src/css/styles.css'

@@ -1,6 +1,12 @@
 import { FC } from 'react'
 import { motion } from 'framer-motion'
 import { StaticImage } from 'gatsby-plugin-image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faSpaceShuttle,
+  faBicycle,
+  faHardHat,
+} from '@fortawesome/free-solid-svg-icons'
 
 const Catchphrase: FC = () => (
   <div className="flex flex-col-reverse md:flex-row p-4">
@@ -31,7 +37,11 @@ const Catchphrase: FC = () => (
           transition={{ duration: 0.8 }}
           className="text-lg text-white"
         >
-          Nevybereš si? Sežneme ti to!
+          <FontAwesomeIcon
+            icon={faSpaceShuttle}
+            className="text-green-500 mr-4"
+          />
+          Nevybereš si? Seženeme ti to!
         </motion.li>
         <motion.li
           initial={{ opacity: 0 }}
@@ -39,6 +49,7 @@ const Catchphrase: FC = () => (
           transition={{ duration: 0.8 }}
           className="text-lg text-white"
         >
+          <FontAwesomeIcon icon={faBicycle} className="text-green-500 mr-4" />
           Kolo od nás bude vždy pečlivě sestavený a{' '}
           <strong>
             v rámci naší garančky ti ho vezmeme i&nbsp;na&nbsp;servis
@@ -51,6 +62,7 @@ const Catchphrase: FC = () => (
           transition={{ duration: 0.8 }}
           className="text-lg text-white"
         >
+          <FontAwesomeIcon icon={faHardHat} className="text-green-500 mr-4" />
           Vybavíme tě přilbou, dresem, rukavičkama i&nbsp;brýlema. Abys byl na
           trailu vyfešákovanej&nbsp;a&nbsp;v&nbsp;bezpečí.
         </motion.li>

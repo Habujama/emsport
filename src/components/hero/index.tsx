@@ -21,7 +21,7 @@ const Hero: FC = () => {
             transition={{ duration: 0.7 }}
             className="text-white text-4xl font-bold sm:pt-16"
           >
-            Kola, servis,lyže, bajky pro&nbsp;všechny sporťáky.
+            Kola, servis, lyže, bajky pro&nbsp;všechny sporťáky.
           </motion.h1>
           <motion.h2
             initial={{ opacity: 0 }}
