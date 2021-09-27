@@ -62,7 +62,7 @@ const Footer: FC = () => {
 
             <dt className="flex-shrink-0 flex-grow-0 w-1/3">Čtvrtek</dt>
             <dd className="flex-shrink-0 flex-grow-0 ml-auto text-left w-2/3">
-              9.00 – 18.00
+              9.00 – 17.00
             </dd>
 
             <dt className="flex-shrink-0 flex-grow-0 w-1/3">Pátek</dt>

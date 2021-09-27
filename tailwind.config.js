@@ -20,6 +20,7 @@ module.exports = {
       gray: colors.trueGray,
       indigo: colors.indigo,
       red: colors.rose,
+      blue: colors.blue,
       yellow: colors.amber,
       black: {
         900: '#191919',

@@ -8,13 +8,13 @@ import theme from 'tailwindcss/defaultTheme'
 const { screens } = theme
 
 const Hero: FC = () => {
-  const isNotMobile = useMedia(`(min-width: ${screens.md})`)
+  const isNotMobile = useMedia(`(min-width: ${screens.lg})`)
   const imageCss = classNames('flex flex-col')
 
   return (
     <>
-      <div className="flex flex-col sm:flex-row justify-between">
-        <div className="flex flex-col max-w-xs justify-center">
+      <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex flex-col max-w-md p-4 sm:p-0 mx-auto lg:mx-0 justify-center">
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -27,7 +27,7 @@ const Hero: FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="text-white text-xl sm:mt-8 mt-4 sm:mb-16 mb-6"
+            className="text-white text-xl lg:text-3xl sm:mt-8 mt-4 sm:mb-16 mb-6"
           >
             Pro tvoje kolo máme špičkový mechaniky, pro tebe fešácký doplňky
             a&nbsp;funkční oblečení.
@@ -47,8 +47,8 @@ const Hero: FC = () => {
             >
               <StaticImage
                 src="../../assets/hero/emsportacka-tym.png"
-                alt="Martin Matoušek"
-                title="Martin Matoušek"
+                alt="Monika Malečková"
+                title="Monika Malečková"
                 height={350}
                 placeholder="blurred"
                 layout="fixed"
@@ -101,7 +101,24 @@ const Hero: FC = () => {
               />
             </motion.div>
           </motion.div>
-        ) : null}
+        ) : (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.1 }}
+            className="self-center"
+          >
+            <StaticImage
+              src="../../assets/hero/emsportacka-tym.png"
+              alt="Monika Malečková"
+              title="Monika Malečková"
+              height={200}
+              placeholder="blurred"
+              layout="fixed"
+              className={imageCss}
+            />
+          </motion.div>
+        )}
       </div>
     </>
   )

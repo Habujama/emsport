@@ -15,7 +15,7 @@ const OpeningHours: FC = () => {
     <div className="flex mt-6 sm:mt-0 sm:pr-8">
       {timeRightNow > openingHours.start && timeRightNow < openingHours.end ? (
         <StaticImage
-          src="../../assets/online.svg"
+          src="../../assets/header/online.svg"
           alt="online"
           title="Máme otevřeno"
           width={35}
@@ -25,7 +25,7 @@ const OpeningHours: FC = () => {
         />
       ) : (
         <StaticImage
-          src="../../assets/offline.svg"
+          src="../../assets/header/offline.svg"
           alt="offline"
           title="Máme zavřeno"
           width={35}

@@ -59,7 +59,7 @@ const Header: FC<Props> = ({ siteTitle }) => {
       <div className="flex-1 flex items-center justify-between max-w-laptop mx-auto">
         <Link to="/" className={`${linkCss} mt-4 lg:mt-0 lg:pl-8`}>
           <StaticImage
-            src="../../assets/logo-bile.png"
+            src="../../assets/header/logo-bile.png"
             alt={siteTitle}
             title={siteTitle}
             height={50}
