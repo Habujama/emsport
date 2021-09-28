@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { StaticImage } from 'gatsby-plugin-image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faSpaceShuttle,
+  faKissWinkHeart,
   faBicycle,
   faHardHat,
 } from '@fortawesome/free-solid-svg-icons'
@@ -37,10 +37,7 @@ const Catchphrase: FC = () => (
           transition={{ duration: 0.8 }}
           className="text-lg text-white"
         >
-          <FontAwesomeIcon
-            icon={faSpaceShuttle}
-            className="text-green-500 mr-4"
-          />
+          <FontAwesomeIcon icon={faKissWinkHeart} className="mr-4" />
           Nevybereš si? Seženeme ti to!
         </motion.li>
         <motion.li
@@ -49,7 +46,7 @@ const Catchphrase: FC = () => (
           transition={{ duration: 0.8 }}
           className="text-lg text-white"
         >
-          <FontAwesomeIcon icon={faBicycle} className="text-green-500 mr-4" />
+          <FontAwesomeIcon icon={faBicycle} className="mr-4" />
           Kolo od nás bude vždy pečlivě sestavený a{' '}
           <strong>
             v rámci naší garančky ti ho vezmeme i&nbsp;na&nbsp;servis
@@ -62,7 +59,7 @@ const Catchphrase: FC = () => (
           transition={{ duration: 0.8 }}
           className="text-lg text-white"
         >
-          <FontAwesomeIcon icon={faHardHat} className="text-green-500 mr-4" />
+          <FontAwesomeIcon icon={faHardHat} className="mr-4" />
           Vybavíme tě přilbou, dresem, rukavičkama i&nbsp;brýlema. Abys byl na
           trailu vyfešákovanej&nbsp;a&nbsp;v&nbsp;bezpečí.
         </motion.li>
