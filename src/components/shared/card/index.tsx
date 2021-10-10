@@ -3,23 +3,26 @@ import { motion } from 'framer-motion'
 import classNames from 'classnames'
 
 interface Props {
-  cardTitle: any
+  cardTitle?: any
   cardParagraph?: string
   cardBackgroundColor?: string
   margin?: string
+  className?: string
 }
 
 const Card: FC<Props> = ({
   cardTitle,
   cardParagraph,
   cardBackgroundColor = 'bg-gray-500',
-  margin,
+  margin = 'm-4',
+  className,
   children,
 }) => {
   const cardCss = classNames(
-    'flex flex-col p-6 rounded-md shadow-lg m-4',
+    'p-6 rounded-md shadow-lg',
     cardBackgroundColor,
-    margin
+    margin,
+    className ? className : 'flex flex-col'
   )
   const phraseCss = classNames('text-2xl font-bold self-center')
 

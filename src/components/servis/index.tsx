@@ -59,7 +59,14 @@ const Service: FC = () => {
           />
         </motion.div>
       </div>
-      <h2 className="text-bold text-5xl text-center mb-4">SERVIS KOL</h2>
+      <motion.h2
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        className="text-5xl font-barlow font-semibold text-center uppercase pt-8 sm:pt-12"
+      >
+        SERVIS KOL
+      </motion.h2>
       <h4 className="text-xl sm:text-2xl sm:pt-12 text-center mx-auto leading-10 mb-2">
         O&nbsp;servis se u&nbsp;nás starají{' '}
         <strong>dva&nbsp;největší borci široko daleko</strong>. Pravidelně je

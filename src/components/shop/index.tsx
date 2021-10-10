@@ -6,8 +6,15 @@ import ProductCard from '../shared/product-card'
 const Shop: FC = () => {
   return (
     <div className="flex flex-col p-4">
-      <h2 className="text-bold text-5xl text-center mb-4">E-SHOP</h2>
-      <h4 className="text-xl sm:text-2xl sm:pt-12 text-center mx-auto leading-10 mb-2">
+      <motion.h2
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        className="text-5xl font-barlow font-semibold text-center uppercase pt-8 sm:pt-12"
+      >
+        E-SHOP
+      </motion.h2>
+      <h4 className="text-xl sm:text-2xl pt-8 sm:pt-12 text-center mx-auto leading-10 mb-2">
         Vyber si z naší online nabídky. Nebo přijď k nám na prodejnu,
         rádi&nbsp;tě&nbsp;uvidíme!
       </h4>

@@ -6,7 +6,14 @@ import ProductCard from '../shared/product-card'
 const Rental: FC = () => {
   return (
     <div className="flex flex-col p-4">
-      <h2 className="text-bold text-5xl text-center mb-4">PŮJČOVNA</h2>
+      <motion.h2
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        className="text-5xl font-barlow font-semibold text-center uppercase pt-8 sm:pt-12"
+      >
+        PŮJČOVNA
+      </motion.h2>
       <h4 className="text-xl sm:text-2xl sm:pt-12 text-center mx-auto leading-10 mb-2">
         Plánuješ velkej výlet a&nbsp;chybí ti na něj vybavení? Máš doma malý
         cyklisty a&nbsp;chybí ti&nbsp;na&nbsp;ně&nbsp;tyč? Tažná tyč? Chceš
