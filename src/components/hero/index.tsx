@@ -106,12 +106,12 @@ const Hero: FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.1 }}
-            className="self-center"
+            className="self-center mb-16"
           >
             <StaticImage
-              src="../../assets/hero/emsportacka-tym.png"
-              alt="Monika Malečková"
-              title="Monika Malečková"
+              src="../../assets/hero/tata-tym.png"
+              alt="Maty Matoušek"
+              title="Maty Matoušek"
               height={200}
               placeholder="blurred"
               layout="fixed"

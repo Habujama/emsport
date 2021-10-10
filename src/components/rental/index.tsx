@@ -14,7 +14,7 @@ const Rental: FC = () => {
         nebudeš? Půjč si&nbsp;to&nbsp;u&nbsp;nás!
       </h4>
 
-      <div className="grid grid-cols-2 gap-x-4 gap-y-4 my-16 mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-4 gap-y-4 my-16 mx-auto">
         <ProductCard buttonText="Půjčte mi to!" />
         <ProductCard buttonText="Půjčte mi to!" />
         <ProductCard buttonText="Půjčte mi to!" />
@@ -34,9 +34,16 @@ const Rental: FC = () => {
         transition={{ duration: 0.7 }}
         className="text-xl text-center font-medium leading-10 mb-12"
       >
-        Napiš nám mail nebo zavolej na&nbsp;
+        Napiš nám{' '}
+        <a
+          href="mailto:info@emsportslany.cz"
+          className="underline hover:text-blue-300"
+        >
+          mail
+        </a>{' '}
+        nebo zavolej na&nbsp;
         <a href="tel:775 710 011" className="underline hover:text-blue-300">
-          775 710 011
+          775&nbsp;710&nbsp;011
         </a>{' '}
         co by sis chtěl půjčit, kdy a&nbsp;na jak&nbsp;dlouho.
         <br />

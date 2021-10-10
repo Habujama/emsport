@@ -39,16 +39,16 @@ const Button: FC<ButtonProps> = ({
   const ref = useRef()
 
   const css = classNames(
-    'text-center outline-none whitespace-no-wrap rounded-md px-4',
+    'transform  text-center outline-none whitespace-no-wrap rounded-md px-4',
     className,
     {
-      'transform bg-transparent hover:bg-blue-300 hover:ease-in-out hover:duration-500 hover:text-black-900 active:ring-4 active:ring-blue-100 active:scale-90':
+      'bg-transparent hover:bg-blue-300 hover:ease-in-out hover:duration-500 hover:text-black-900 active:ring-4 active:ring-blue-100 active:scale-90':
         ButtonType.GHOST === type,
 
-      'transform bg-blue-100 text-gray-800 hover:bg-blue-300 hover:ease-in-out hover:duration-500 active:ring-4 active:ring-blue-100 active:scale-90':
+      'bg-blue-300 text-gray-800 hover:bg-blue-400 hover:ease-in-out hover:duration-500 hover:scale-110 active:ring-4 active:ring-blue-100 active:scale-80':
         ButtonType.PRIMARY === type,
 
-      'bg-blue-100 hover:bg-white hover:text-blue-600 hover:ease-in-out hover:duration-500 active:ring-4 active:ring-blue-100 transform active:scale-90':
+      'border-2 border-solid border-blue-300 text-blue-400 hover:border-blue-400 shadow-lg hover:bg-blue-400 hover:text-white hover:ease-in-out hover:duration-500 active:ring-4 active:ring-blue-100 transform active:scale-90':
         ButtonType.SECONDARY === type,
 
       'py-2 px-2': ButtonSize.SMALL === size,

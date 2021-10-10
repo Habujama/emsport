@@ -29,7 +29,7 @@ const ProductCard: FC<Props> = ({ buttonText = 'Ukaž mi ho!' }) => (
       Osedlej si nejnovější gravel od GT, který vyhrál ocenění Gravel Bike roku
       2020.
     </p>
-    <Button className="flex mx-auto mt-3" type="primary">
+    <Button className="flex mx-auto mt-6" type="secondary">
       {buttonText}
     </Button>
   </motion.div>

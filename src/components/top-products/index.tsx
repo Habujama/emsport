@@ -1,6 +1,8 @@
 import { FC } from 'react'
 import { motion } from 'framer-motion'
+
 import ProductCard from '../shared/product-card/'
+import Button from '../shared/button/Button'
 
 const TopProducts: FC = () => {
   return (
@@ -17,6 +19,16 @@ const TopProducts: FC = () => {
         <ProductCard />
         <ProductCard />
         <ProductCard />
+      </div>
+      <div className="flex">
+        <Button
+          to="/e-shop"
+          type="primary"
+          size="large"
+          className="mt-8 mx-auto"
+        >
+          Ukaž mi víc
+        </Button>
       </div>
     </div>
   )
