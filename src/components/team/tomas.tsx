@@ -28,7 +28,7 @@ const Tomas: FC = () => {
         <p>
           Iron Man, mistr ČR v&nbsp;dlouhém a&nbsp;polovičním triatlonu
           a&nbsp;vicemistr Evropy v&nbsp;dlouhém triatlonu. Když nezávodí
-          a&nbsp;netrénuje, tak si hraje s&nbsp;koly v&nbsp;naší dílně nebo se
+          a&nbsp;netrénuje, tak si hraje s&nbsp;koly v&nbsp;naší dílně, nebo se
           stará o&nbsp;svoje dvě&nbsp;děti a&nbsp;manželku.
         </p>
       </div>

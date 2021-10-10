@@ -29,7 +29,8 @@ const Martin: FC = () => {
         </h4>
         <p>
           Ostřílená bajkerka, která to na&nbsp;kole nandá nejednomu chlapovi.
-          Xkrát jela, ujela a dojela jeden z nejdrsnějších českých závodů,&nbsp;
+          Dvanáctkrát jela, ujela a dojela jeden z nejdrsnějších českých
+          závodů,&nbsp;
           <a
             href="https://loudani.cz/"
             target="_blank"
