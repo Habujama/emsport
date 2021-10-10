@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Hero from '../components/hero/index'
 import TopProducts from '../components/top-products'
-import Catchphrase from '../components/catchphrase/index.tsx'
+import Catchphrase from '../components/catchphrase/index'
 
 const IndexPage: FC = () => {
   return (
