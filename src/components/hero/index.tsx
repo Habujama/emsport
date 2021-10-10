@@ -19,7 +19,7 @@ const Hero: FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7 }}
-            className="text-white text-4xl font-bold sm:pt-16"
+            className="text-4xl font-bold sm:pt-16"
           >
             Kola, servis, lyže, bajky pro&nbsp;všechny sporťáky.
           </motion.h1>
@@ -27,7 +27,7 @@ const Hero: FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="text-white text-xl lg:text-3xl sm:mt-8 mt-4 sm:mb-16 mb-6"
+            className="text-xl lg:text-3xl sm:mt-8 mt-4 sm:mb-16 mb-6"
           >
             Pro tvoje kolo máme špičkový mechaniky, pro tebe fešácký doplňky
             a&nbsp;funkční oblečení.

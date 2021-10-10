@@ -1,8 +1,7 @@
 import { FC, useEffect } from 'react'
-import { Link } from 'gatsby'
 import { motion, usePresence } from 'framer-motion'
-import classNames from 'classnames'
 
+import Button from '../shared/button/Button'
 import OpeningHours from '../../components/opening-hours/opening-hours'
 
 const variants = {
@@ -21,21 +20,10 @@ const variants = {
 }
 
 interface Props {
-  toggle: any
-  ref?: any
+  toggle(): void
 }
 
 const MenuItems: FC<Props> = ({ toggle }) => {
-  const cardCss = classNames(
-    'whitespace-nowrap rounded-md',
-    'py-4 sm:px-8 px-4'
-  )
-
-  const linkCss = classNames(
-    'focus:outline-none focus:ring-1 focus:transition-shadow focus:rounded-md',
-    'active:transition-shadow active:duration-200 active:shadow-focus-blue-100'
-  )
-
   const [isPresent, safeToRemove] = usePresence()
 
   useEffect(() => {
@@ -43,58 +31,56 @@ const MenuItems: FC<Props> = ({ toggle }) => {
   }, [isPresent, safeToRemove])
 
   return (
-    <motion.div
-      variants={variants}
-      className="flex flex-col space-y-4 items-center text-white justify-between outline-none"
-    >
-      <Link to="/" className={linkCss}>
-        <motion.div
-          className={`${cardCss} hover:py-4`}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+    <>
+      <motion.div
+        variants={variants}
+        className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 items-center justify-between outline-none"
+      >
+        <Button
+          to="/servis"
+          type="ghost"
+          size="large"
+          className="sm:mr-4"
           onClick={toggle}
         >
-          Servis
-        </motion.div>
-      </Link>
+          <h1 className="">Servis</h1>
+        </Button>
 
-      <Link to="/" className={linkCss}>
-        <motion.div
-          className={`${cardCss} hover:py-4`}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+        <Button
+          to="/pujcovna"
+          type="ghost"
+          size="large"
+          className="sm:mr-4"
           onClick={toggle}
         >
-          Půjčovna
-        </motion.div>
-      </Link>
+          <h1 className="">Půjčovna</h1>
+        </Button>
 
-      <Link to="/" className={linkCss}>
-        <motion.div
-          className={`${cardCss} hover:py-4`}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+        <Button
+          to="/e-shop"
+          type="ghost"
+          size="large"
+          className="sm:mr-4"
           onClick={toggle}
         >
-          E-shop
-        </motion.div>
-      </Link>
+          <h1 className="">E-shop</h1>
+        </Button>
 
-      <Link to="#kontakt" className={linkCss}>
-        <motion.div
-          className={`${cardCss} hover:py-4`}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+        <Button
+          to="/#kontakt"
+          type="ghost"
+          size="large"
+          className="sm:mr-4"
           onClick={toggle}
         >
-          Kontakt
-        </motion.div>
-      </Link>
+          <h1 className="">Kontakt</h1>
+        </Button>
+      </motion.div>
 
-      <motion.div className={`flex`}>
+      <motion.div className="flex ">
         <OpeningHours />
       </motion.div>
-    </motion.div>
+    </>
   )
 }
 

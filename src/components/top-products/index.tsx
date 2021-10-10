@@ -9,7 +9,7 @@ const TopProducts: FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
-        className="text-white text-4xl font-bold text-center sm:pt-16 mb-8"
+        className="text-4xl font-bold text-center sm:pt-16 mb-8"
       >
         To nejlepší pro tebe
       </motion.h2>

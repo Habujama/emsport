@@ -5,7 +5,7 @@ const Footer: FC = () => {
   const link = classNames('underline hover:no-underline')
   return (
     <footer
-      className="w-full px-8 py-12 bg-black-900 text-white text-sm h-card"
+      className="w-full px-8 py-12 bg-black-900 text-sm h-card"
       data-testid="app-footer"
     >
       <div className="grid grid-rows-4 grid-cols-1 sm:grid-rows-1 sm:grid-cols-4 gap-y-2 sm:gap-x-4 max-w-screen-xl">

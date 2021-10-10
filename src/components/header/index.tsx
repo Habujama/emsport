@@ -6,8 +6,8 @@ import { StaticImage } from 'gatsby-plugin-image'
 import classNames from 'classnames'
 import theme from 'tailwindcss/defaultTheme'
 
-import PCMenu from './pc-menu'
-import MobileNav from '../mobile-nav'
+import MenuItems from './menu-items'
+import MobileNav from '../mobile-nav/index'
 
 interface Props {
   siteTitle: string
@@ -40,7 +40,7 @@ const Header: FC<Props> = ({ siteTitle }) => {
   )
 
   const headerCss = classNames(
-    'sticky flex top-0 font-barlow text-lg text-white px-6 z-30',
+    'sticky flex top-0 font-barlow text-lg px-6 z-30',
     {
       'bg-header-gradient text-md shadow-md py-4': isScrolling && isNotMobile,
       'bg-black-900': isScrolling && !isNotMobile,
@@ -67,7 +67,7 @@ const Header: FC<Props> = ({ siteTitle }) => {
             layout="fixed"
           />
         </Link>
-        {isNotMobile ? <PCMenu /> : <MobileNav />}
+        {isNotMobile ? <MenuItems /> : <MobileNav />}
       </div>
     </motion.header>
   )

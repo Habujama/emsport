@@ -24,7 +24,7 @@ const ProductCard: FC = () => (
     <motion.p
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="leading-5"
+      className="leading-5 text-gray-800"
     >
       Osedlej si nejnovější gravel od GT, který vyhrál ocenění Gravel Bike roku
       2020.

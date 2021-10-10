@@ -45,7 +45,7 @@ const Button: FC<ButtonProps> = ({
       'transform bg-transparent hover:bg-blue-300 hover:ease-in-out hover:duration-500 hover:text-black-900 active:ring-4 active:ring-blue-100 active:scale-90':
         ButtonType.GHOST === type,
 
-      'transform bg-blue-100 hover:bg-blue-300 hover:ease-in-out hover:duration-500 active:ring-4 active:ring-blue-100 active:scale-90':
+      'transform bg-blue-100 text-gray-800 hover:bg-blue-300 hover:ease-in-out hover:duration-500 active:ring-4 active:ring-blue-100 active:scale-90':
         ButtonType.PRIMARY === type,
 
       'bg-blue-100 hover:bg-white hover:text-blue-600 hover:ease-in-out hover:duration-500 active:ring-4 active:ring-blue-100 transform active:scale-90':
