@@ -3,7 +3,8 @@ import classNames from 'classnames'
 import { motion } from 'framer-motion'
 import { Link } from 'gatsby'
 
-enum ButtonColor {
+enum ButtonType {
+  GHOST = 'ghost',
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
 }
@@ -13,10 +14,10 @@ enum ButtonSize {
   LARGE = 'large',
 }
 type Size = 'small' | 'medium' | 'large'
-type Color = 'primary' | 'secondary'
+type Type = 'ghost' | 'primary' | 'secondary'
 type Target = '_blank'
 export interface ButtonProps {
-  color?: Color
+  type?: Type
   size?: Size
   target?: Target
   href?: string
@@ -28,7 +29,7 @@ export interface ButtonProps {
 
 const Button: FC<ButtonProps> = ({
   size = ButtonSize.MEDIUM,
-  color = ButtonColor.PRIMARY,
+  type = ButtonType.PRIMARY,
   href,
   target,
   to,
@@ -41,11 +42,14 @@ const Button: FC<ButtonProps> = ({
     'text-center outline-none whitespace-no-wrap rounded-md px-4',
     className,
     {
-      'transform hover:bg-blue-600 hover:ease-in-out hover:duration-500 active:ring-4 active:ring-red-100 active:scale-90':
-        ButtonColor.PRIMARY === color,
+      'transform bg-transparent hover:bg-blue-300 hover:ease-in-out hover:duration-500 hover:text-black-900 active:ring-4 active:ring-blue-100 active:scale-90':
+        ButtonType.GHOST === type,
 
-      'hover:bg-white hover:text-blue-600 hover:ease-in-out hover:duration-500 active:ring-4 active:ring-blue-100 transform active:scale-90':
-        ButtonColor.SECONDARY === color,
+      'transform bg-blue-100 hover:bg-blue-300 hover:ease-in-out hover:duration-500 active:ring-4 active:ring-blue-100 active:scale-90':
+        ButtonType.PRIMARY === type,
+
+      'bg-blue-100 hover:bg-white hover:text-blue-600 hover:ease-in-out hover:duration-500 active:ring-4 active:ring-blue-100 transform active:scale-90':
+        ButtonType.SECONDARY === type,
 
       'py-2 px-2': ButtonSize.SMALL === size,
       'py-3 px-3 leading-7': ButtonSize.MEDIUM === size,

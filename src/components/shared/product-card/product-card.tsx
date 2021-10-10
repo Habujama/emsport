@@ -26,10 +26,12 @@ const ProductCard: FC = () => (
       animate={{ opacity: 1 }}
       className="leading-5"
     >
-      Osedlej si nejnovější gravel od GT který vyhrál ocenění Gravel Bike roku
+      Osedlej si nejnovější gravel od GT, který vyhrál ocenění Gravel Bike roku
       2020.
     </motion.p>
-    <Button className="flex bg-blue-300 mx-auto mt-3">Ukaž mi ho!</Button>
+    <Button className="flex mx-auto mt-3" type="primary">
+      Ukaž mi ho!
+    </Button>
   </div>
 )
 export default ProductCard
