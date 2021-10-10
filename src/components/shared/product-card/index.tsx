@@ -3,8 +3,16 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { motion } from 'framer-motion'
 import Button from '../button/Button'
 
-const ProductCard: FC = () => (
-  <div className="bg-white max-w-sm rounded-md shadow-md p-8">
+interface Props {
+  buttonText?: string
+}
+
+const ProductCard: FC<Props> = ({ buttonText = 'Ukaž mi ho!' }) => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    className="bg-white max-w-sm rounded-md shadow-md p-8"
+  >
     <StaticImage
       src="../../../assets/products/gtgrade.png"
       alt="GT Grade"
@@ -14,24 +22,16 @@ const ProductCard: FC = () => (
       layout="fixed"
       className="mb-4 mx-auto"
     />
-    <motion.h4
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="font-bold text-center leading-7 pb-2"
-    >
+    <h4 className="font-bold text-center leading-7 pb-2">
       GT Grade Carbon Expert
-    </motion.h4>
-    <motion.p
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="leading-5 text-gray-800"
-    >
+    </h4>
+    <p className="leading-5 text-gray-800">
       Osedlej si nejnovější gravel od GT, který vyhrál ocenění Gravel Bike roku
       2020.
-    </motion.p>
+    </p>
     <Button className="flex mx-auto mt-3" type="primary">
-      Ukaž mi ho!
+      {buttonText}
     </Button>
-  </div>
+  </motion.div>
 )
 export default ProductCard

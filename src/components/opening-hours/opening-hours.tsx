@@ -44,14 +44,14 @@ const OpeningHours: FC = () => {
         hourRightNow < openingHours.end ? (
           <a
             href="tel:775 710 011"
-            className="text-lg flex text-center hover:text-blue-600"
+            className="text-lg flex text-center hover:text-blue-300"
           >
             775 710 011
           </a>
         ) : (
           <a
             href="mailto:info@emsportslany.cz"
-            className="text-lg flex text-center hover:text-blue-600"
+            className="text-lg flex text-center hover:text-blue-300"
           >
             info@emsportslany.cz
           </a>

@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { motion } from 'framer-motion'
-import ProductCard from '../shared/product-card/product-card'
+import ProductCard from '../shared/product-card/'
 
 const TopProducts: FC = () => {
   return (

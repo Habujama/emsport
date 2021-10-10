@@ -43,7 +43,7 @@ export const Content: FC<Props> = ({ toggle }) => {
         </motion.div>
       </Link>
 
-      <Link to="/" className={linkCss} onClick={toggle}>
+      <Link to="/pujcovna" className={linkCss} onClick={toggle}>
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           Půjčovna
         </motion.div>
