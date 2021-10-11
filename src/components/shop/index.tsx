@@ -1,9 +1,40 @@
 import { FC } from 'react'
 import { motion } from 'framer-motion'
+import { useStaticQuery, graphql } from 'gatsby'
+import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { BLOCKS } from '@contentful/rich-text-types'
 
 import ProductCard from '../shared/product-card'
 
 const Shop: FC = () => {
+  const { allContentfulEntry } = useStaticQuery(graphql`
+    query {
+      allContentfulEntry {
+        edges {
+          node {
+            id
+            ... on ContentfulTopProducts {
+              id
+              titulek
+              popis {
+                raw
+              }
+              cena
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  /* eslint-disable react/display-name */
+  const options = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (_, children) => <p className="mb-4">{children}</p>,
+    },
+  }
+  /* eslint-enable react/display-name */
+
   return (
     <div className="flex flex-col p-4">
       <motion.h2
@@ -19,15 +50,17 @@ const Shop: FC = () => {
         rádi&nbsp;tě&nbsp;uvidíme!
       </h4>
       <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-x-4 gap-y-4 my-16 mx-auto">
-        <ProductCard buttonText="Chci vědět víc!" />
-        <ProductCard buttonText="Chci vědět víc!" />
-        <ProductCard buttonText="Chci vědět víc!" />
-        <ProductCard buttonText="Chci vědět víc!" />
-        <ProductCard buttonText="Chci vědět víc!" />
-        <ProductCard buttonText="Chci vědět víc!" />
-        <ProductCard buttonText="Chci vědět víc!" />
-        <ProductCard buttonText="Chci vědět víc!" />
-        <ProductCard buttonText="Chci vědět víc!" />
+        {allContentfulEntry.edges.map(
+          ({ node: { titulek, popis, cena, id } }) => (
+            <ProductCard
+              title={titulek}
+              description={renderRichText(popis, options)}
+              price={cena}
+              key={id}
+              buttonText="Chci vědět víc!"
+            />
+          )
+        )}
       </div>
       <motion.h2
         initial={{ opacity: 0 }}

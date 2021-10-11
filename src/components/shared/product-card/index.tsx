@@ -4,15 +4,29 @@ import { motion } from 'framer-motion'
 import Button from '../button/Button'
 
 interface Props {
+  title?: string
+  description?: any
+  price?: number
+  key?: string
   buttonText?: string
 }
 
-const ProductCard: FC<Props> = ({ buttonText = 'Ukaž mi ho!' }) => (
+const ProductCard: FC<Props> = ({
+  title,
+  description,
+  price,
+  key,
+  buttonText = 'Ukaž mi ho!',
+}) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
+    id={key}
     className="bg-white max-w-sm rounded-md shadow-md p-8"
   >
+    <div className="relative top-5 bg-blue-100 shadow-md text-gray-800 font-semibold rounded-full items-center w-32">
+      <p className="text-center p-4">{price}&nbsp;Kč</p>
+    </div>
     <StaticImage
       src="../../../assets/products/gtgrade.png"
       alt="GT Grade"
@@ -22,13 +36,10 @@ const ProductCard: FC<Props> = ({ buttonText = 'Ukaž mi ho!' }) => (
       layout="fixed"
       className="mb-4 mx-auto"
     />
-    <h4 className="font-bold text-center leading-7 pb-2">
-      GT Grade Carbon Expert
+    <h4 className="text-xl text-blue-400 text-center font-bold leading-7 pb-2">
+      {title}
     </h4>
-    <p className="leading-5 text-gray-800">
-      Osedlej si nejnovější gravel od GT, který vyhrál ocenění Gravel Bike roku
-      2020.
-    </p>
+    <p className="leading-5 text-gray-800">{description}</p>
     <Button className="flex mx-auto mt-6" type="secondary">
       {buttonText}
     </Button>
