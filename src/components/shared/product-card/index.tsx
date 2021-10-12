@@ -1,7 +1,9 @@
 import { FC } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { motion } from 'framer-motion'
+
 import Button from '../button/Button'
+import NumberFormat from '../../../utils/number-format'
 
 interface Props {
   title?: string
@@ -25,7 +27,7 @@ const ProductCard: FC<Props> = ({
     className="bg-white max-w-sm rounded-md shadow-md p-8"
   >
     <div className="relative top-5 bg-blue-100 shadow-md text-gray-800 font-semibold rounded-full items-center w-32">
-      <p className="text-center p-4">{price}&nbsp;Kč</p>
+      <p className="text-center p-4">{NumberFormat(price)}</p>
     </div>
     <StaticImage
       src="../../../assets/products/gtgrade.png"

@@ -49,7 +49,7 @@ const Shop: FC = () => {
         Vyber si z naší online nabídky. Nebo přijď k nám na prodejnu,
         rádi&nbsp;tě&nbsp;uvidíme!
       </h4>
-      <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-x-4 gap-y-4 my-16 mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-x-4 gap-y-4 my-16">
         {allContentfulEntry.edges.map(
           ({ node: { titulek, popis, cena, id } }) => (
             <ProductCard
@@ -71,12 +71,12 @@ const Shop: FC = () => {
         Nenašel jsi, co hledáš? Dej nám vědět, seženeme ti to!
       </motion.h2>
       <p className="text-2xl text-center pb-32">
-        Napiš nám{' '}
+        Napiš nám mail na{' '}
         <a
           href="mailto:info@emsportslany.cz"
           className="underline hover:text-blue-300"
         >
-          mail
+          info@emsportslany.cz
         </a>{' '}
         nebo zavolej na&nbsp;
         <a href="tel:775 710 011" className="underline hover:text-blue-300">

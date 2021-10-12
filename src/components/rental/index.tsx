@@ -41,12 +41,12 @@ const Rental: FC = () => {
         transition={{ duration: 0.7 }}
         className="text-xl text-center font-medium leading-10 mb-12"
       >
-        Napiš nám{' '}
+        Napiš nám mail&nbsp;na{' '}
         <a
           href="mailto:info@emsportslany.cz"
           className="underline hover:text-blue-300"
         >
-          mail
+          info@emsportslany.cz
         </a>{' '}
         nebo zavolej na&nbsp;
         <a href="tel:775 710 011" className="underline hover:text-blue-300">
