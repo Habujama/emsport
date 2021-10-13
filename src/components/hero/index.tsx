@@ -13,7 +13,7 @@ const Hero: FC = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row justify-between">
+      <div className="flex flex-col sm:grid grid-cols-2 gap-x-10 justify-between md:mt-12">
         <div className="flex flex-col max-w-md p-4 sm:p-0 mx-auto lg:mx-0 justify-center">
           <motion.h1
             initial={{ opacity: 0 }}
@@ -38,26 +38,11 @@ const Hero: FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ staggerChildren: 0.5 }}
-            className="flex flex-col"
+            className="flex flex-col sm:col-start-2"
           >
             <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 150 }}
-              transition={{ duration: 1, delay: 0.1 }}
-            >
-              <StaticImage
-                src="../../assets/hero/emsportacka-tym.png"
-                alt="Monika Malečková"
-                title="Monika Malečková"
-                height={350}
-                placeholder="blurred"
-                layout="fixed"
-                className={`${imageCss} lg:-ml-12 -mt-48`}
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 100 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
               <StaticImage
@@ -71,8 +56,8 @@ const Hero: FC = () => {
               />
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 150 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 220 }}
               transition={{ duration: 1, delay: 0.1 }}
             >
               <StaticImage
@@ -87,7 +72,7 @@ const Hero: FC = () => {
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: -100 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0, x: 100 }}
               transition={{ duration: 1 }}
             >
               <StaticImage

@@ -11,6 +11,7 @@ interface Props {
   price?: number
   titlePhoto?: any
   buttonText?: string
+  buttonTo?: string
 }
 
 const ProductCard: FC<Props> = ({
@@ -19,6 +20,7 @@ const ProductCard: FC<Props> = ({
   price,
   titlePhoto,
   buttonText = 'Ukaž mi ho!',
+  buttonTo,
 }) => (
   <motion.div
     initial={{ opacity: 0 }}
@@ -28,12 +30,18 @@ const ProductCard: FC<Props> = ({
     <div className="relative top-0 bg-blue-100 shadow-md text-gray-800 font-semibold rounded-full items-center w-32 z-10">
       <p className="text-center p-4">{NumberFormat(price)}</p>
     </div>
-    <GatsbyImage image={getImage(titlePhoto)} alt="" />
+    <div className="flex">
+      <GatsbyImage
+        image={getImage(titlePhoto)}
+        alt={title}
+        className="mx-auto"
+      />
+    </div>
     <h4 className="text-xl text-blue-400 text-center font-bold leading-7 py-2">
       {title}
     </h4>
     <p className="leading-5 text-gray-800">{description}</p>
-    <Button className="flex mx-auto mt-6" type="secondary">
+    <Button className="block mx-auto mt-6" type="secondary" to={buttonTo}>
       {buttonText}
     </Button>
   </motion.div>
