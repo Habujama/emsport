@@ -20,6 +20,20 @@ const Shop: FC = () => {
                 raw
               }
               cena
+              fotogalerie {
+                gatsbyImageData(
+                  height: 200
+                  placeholder: BLURRED
+                  formats: NO_CHANGE
+                )
+              }
+              titulnFoto {
+                gatsbyImageData(
+                  height: 200
+                  placeholder: BLURRED
+                  formats: AUTO
+                )
+              }
             }
           }
         }
@@ -51,11 +65,12 @@ const Shop: FC = () => {
       </h4>
       <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-x-4 gap-y-4 my-16">
         {allContentfulEntry.edges.map(
-          ({ node: { titulek, popis, cena, id } }) => (
+          ({ node: { titulek, popis, cena, id, titulnFoto } }) => (
             <ProductCard
               title={titulek}
               description={renderRichText(popis, options)}
               price={cena}
+              titlePhoto={titulnFoto}
               key={id}
               buttonText="Chci vědět víc!"
             />

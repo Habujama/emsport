@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { motion } from 'framer-motion'
 import { StaticImage } from 'gatsby-plugin-image'
 
-const Martin: FC = () => {
+const Monika: FC = () => {
   return (
     <>
       <div className="pt-14 -ml-4">
@@ -46,4 +46,4 @@ const Martin: FC = () => {
   )
 }
 
-export default Martin
+export default Monika
