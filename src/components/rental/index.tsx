@@ -1,9 +1,53 @@
 import { FC } from 'react'
 import { motion } from 'framer-motion'
+import { useStaticQuery, graphql } from 'gatsby'
+import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 
 import ProductCard from '../shared/product-card'
 
 const Rental: FC = () => {
+  const { allContentfulEntry } = useStaticQuery(graphql`
+    query {
+      allContentfulEntry {
+        edges {
+          node {
+            id
+            ... on ContentfulPujcovna {
+              id
+              cenaZaDen
+              popis {
+                raw
+              }
+              titulek
+              titulnFoto {
+                gatsbyImageData(
+                  height: 200
+                  placeholder: BLURRED
+                  formats: AUTO
+                )
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  /* eslint-disable react/display-name */
+  const options = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (_, children) => <p className="mb-4">{children}</p>,
+      [BLOCKS.UL_LIST]: (_, children) => (
+        <ul className="list-disc whitespace-nowrap">{children}</ul>
+      ),
+    },
+    renderMark: {
+      [MARKS.BOLD]: text => <strong>{text}</strong>,
+    },
+  }
+  /* eslint-enable react/display-name */
+
   return (
     <div className="flex flex-col p-4">
       <motion.h2
@@ -22,10 +66,20 @@ const Rental: FC = () => {
       </h4>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-4 gap-y-4 my-16 mx-auto">
-        <ProductCard buttonText="Půjčte mi to!" />
-        <ProductCard buttonText="Půjčte mi to!" />
-        <ProductCard buttonText="Půjčte mi to!" />
-        <ProductCard buttonText="Půjčte mi to!" />
+        {allContentfulEntry.edges.map(
+          ({ node: { titulek, cenaZaDen, popis, id, titulnFoto } }) => {
+            return popis !== undefined ? (
+              <ProductCard
+                title={titulek}
+                description={renderRichText(popis, options)}
+                price={cenaZaDen}
+                titlePhoto={titulnFoto}
+                key={id}
+                buttonText="Půjčte mi to!"
+              />
+            ) : null
+          }
+        )}
       </div>
       <motion.h2
         initial={{ opacity: 0 }}

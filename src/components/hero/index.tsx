@@ -8,7 +8,7 @@ import theme from 'tailwindcss/defaultTheme'
 const { screens } = theme
 
 const Hero: FC = () => {
-  const isNotMobile = useMedia(`(min-width: ${screens.lg})`)
+  const isNotMobile = useMedia(`(min-width: ${screens.md})`)
   const imageCss = classNames('flex flex-col')
 
   return (
@@ -94,10 +94,10 @@ const Hero: FC = () => {
             className="self-center mb-16"
           >
             <StaticImage
-              src="../../assets/hero/tata-tym.png"
-              alt="Maty Matoušek"
-              title="Maty Matoušek"
-              height={200}
+              src="../../assets/emsportak.png"
+              alt="eM SPORT Slaný"
+              title="eM SPORT Slaný"
+              height={250}
               placeholder="blurred"
               layout="fixed"
               className={imageCss}

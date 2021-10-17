@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { motion } from 'framer-motion'
 import { useStaticQuery, graphql } from 'gatsby'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import { BLOCKS } from '@contentful/rich-text-types'
+import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 
 import ProductCard from '../shared/product-card'
 
@@ -12,7 +12,6 @@ const Shop: FC = () => {
       allContentfulEntry {
         edges {
           node {
-            id
             ... on ContentfulTopProducts {
               id
               titulek
@@ -24,7 +23,7 @@ const Shop: FC = () => {
                 gatsbyImageData(
                   height: 200
                   placeholder: BLURRED
-                  formats: NO_CHANGE
+                  formats: AUTO
                 )
               }
               titulnFoto {
@@ -46,6 +45,9 @@ const Shop: FC = () => {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (_, children) => <p className="mb-4">{children}</p>,
     },
+    renderMark: {
+      [MARKS.BOLD]: text => <strong>{text}</strong>,
+    },
   }
   /* eslint-enable react/display-name */
 
@@ -65,16 +67,18 @@ const Shop: FC = () => {
       </h4>
       <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-x-4 gap-y-4 my-16">
         {allContentfulEntry.edges.map(
-          ({ node: { titulek, popis, cena, id, titulnFoto } }) => (
-            <ProductCard
-              title={titulek}
-              description={renderRichText(popis, options)}
-              price={cena}
-              titlePhoto={titulnFoto}
-              key={id}
-              buttonText="Chci vědět víc!"
-            />
-          )
+          ({ node: { titulek, popis, cena, id, titulnFoto } }) => {
+            return popis !== undefined ? (
+              <ProductCard
+                title={titulek}
+                description={renderRichText(popis, options)}
+                price={cena}
+                titlePhoto={titulnFoto}
+                key={id}
+                buttonText="Chci vědět víc!"
+              />
+            ) : null
+          }
         )}
       </div>
       <motion.h2

@@ -16,6 +16,9 @@ const TopProducts: FC = () => {
               id
               cena
               titulek
+              popis {
+                raw
+              }
               titulnFoto {
                 gatsbyImageData(
                   height: 150
@@ -42,16 +45,18 @@ const TopProducts: FC = () => {
       </motion.h2>
       <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 items-center justify-center">
         {allContentfulEntry.edges.map(
-          ({ node: { titulek, cena, id, titulnFoto } }) => (
-            <ProductCard
-              title={titulek}
-              price={cena}
-              titlePhoto={titulnFoto}
-              key={id}
-              buttonText="Ukaž mi ho!"
-              buttonTo="/e-shop"
-            />
-          )
+          ({ node: { titulek, cena, id, titulnFoto } }) => {
+            return titulek !== undefined ? (
+              <ProductCard
+                title={titulek}
+                price={cena}
+                titlePhoto={titulnFoto}
+                key={id}
+                buttonText="Ukaž mi ho!"
+                buttonTo="/e-shop"
+              />
+            ) : null
+          }
         )}
       </div>
       <div className="flex">
