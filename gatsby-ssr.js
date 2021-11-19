@@ -1,7 +1,3 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/ssr-apis/
- */
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
-// You can delete this file if you're not using it
+import './src/css/styles.css'

@@ -3,19 +3,13 @@ import { motion } from 'framer-motion'
 import classnames from 'classnames'
 import { StaticImage } from 'gatsby-plugin-image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useMedia } from 'react-use'
-import theme from 'tailwindcss/defaultTheme'
 import {
   faStar,
   faBicycle,
   faHandSparkles,
 } from '@fortawesome/free-solid-svg-icons'
 
-const { screens } = theme
-
 const Catchphrase: FC = () => {
-  const isNotMobile = useMedia(`(min-width: ${screens.md})`)
-
   const faImageLiCss = classnames('text-blue-300 text-3xl self-center')
   const ImageCircle = classnames(
     'lg:border-2 lg:border-solid lg:border-white lg:rounded-full lg:p-4 mr-4'
@@ -24,19 +18,17 @@ const Catchphrase: FC = () => {
   const phraseCss = classnames('self-center')
 
   return (
-    <div className="grid grid-cols-5 gap-x-8 p-4">
-      {isNotMobile ? (
-        <div className="col-start-1 col-span-1 self-center">
-          <StaticImage
-            src="../../assets/emsportak.png"
-            alt=""
-            height={250}
-            placeholder="blurred"
-            layout="fixed"
-          />
-        </div>
-      ) : null}
-      <div className="col-start-3 col-span-3 mb-16">
+    <div className="flex flex-col md:flex-row md:space-x-24 p-4">
+      <div className="self-center mb-6 sm:mb-0">
+        <StaticImage
+          src="../../assets/emsportak.png"
+          alt=""
+          height={250}
+          placeholder="blurred"
+          layout="fixed"
+        />
+      </div>
+      <div className="mb-16">
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
