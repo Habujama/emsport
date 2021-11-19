@@ -26,7 +26,7 @@ const Martin: FC = () => {
           mechanik, silniční a&nbsp;bajkový závodník, člen týmu VIPRO cycling
         </h4>
         <p>
-          Postará se&nbsp;o&nbsp;vaše kolo stejně jako se stará o&nbsp;kola
+          Postará se&nbsp;o&nbsp;vaše kolo stejně, jako se stará o&nbsp;kola
           profesionálních závodníků. Poradí vám s&nbsp;jeho přestavbou
           i&nbsp;výběrem.
         </p>

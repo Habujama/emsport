@@ -105,8 +105,8 @@ const Rental: FC = () => {
         nebo zavolej na&nbsp;
         <a href="tel:775 710 011" className="underline hover:text-blue-300">
           775&nbsp;710&nbsp;011
-        </a>{' '}
-        co by sis chtěl půjčit, kdy a&nbsp;na jak&nbsp;dlouho.
+        </a>
+        , co by sis chtěl půjčit, kdy a&nbsp;na jak&nbsp;dlouho.
         <br />
         Zkontrolujeme dostupnost a&nbsp;připravíme ti&nbsp;to.
       </motion.p>

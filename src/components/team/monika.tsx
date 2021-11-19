@@ -5,11 +5,11 @@ import { StaticImage } from 'gatsby-plugin-image'
 const Monika: FC = () => {
   return (
     <>
-      <div className="pt-14 -ml-4">
+      <div>
         <StaticImage
-          src="../../assets/hero/emsportacka-tym.png"
+          src="../../assets/hero/monika-tym.png"
           alt="Monika Malečková"
-          height={260}
+          height={230}
           placeholder="blurred"
           layout="fixed"
           className="self-center mx-auto"
@@ -20,7 +20,7 @@ const Monika: FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
-          className="text-3xl font-barlow font-semibold text-justify md:text-left"
+          className="text-3xl font-barlow font-semibold text-justify md:text-left pt-4 sm:pt-10"
         >
           Monika Malečková
         </motion.h2>

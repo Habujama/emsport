@@ -17,12 +17,10 @@ import Card from '../shared/card'
 const Service: FC = () => {
   const faImageLiCss = classNames('text-blue-400 text-3xl self-center')
   const ImageCircle = classNames(
-    'sm:border-2 sm:border-solid sm:border-white sm:rounded-full sm:p-4 mr-4'
+    'lg:border-2 lg:border-solid lg:border-white lg:rounded-full lg:p-4 mr-4'
   )
 
   const phraseCss = classNames('text-2xl font-bold self-center')
-
-  const imageCss = classNames('')
 
   return (
     <div className="flex flex-col p-4">
@@ -39,7 +37,7 @@ const Service: FC = () => {
             height={354}
             placeholder="blurred"
             layout="fixed"
-            className={`${imageCss} sm:-mt-4 sm:-mr-6`}
+            className="sm:-mt-4 sm:-mr-6"
           />
         </motion.div>
 
@@ -55,7 +53,7 @@ const Service: FC = () => {
             height={320}
             placeholder="blurred"
             layout="fixed"
-            className={`${imageCss} -mt-32 sm:mt-4 sm:-ml-6`}
+            className="-mt-32 sm:mt-4 sm:-ml-6"
           />
         </motion.div>
       </div>
@@ -102,7 +100,7 @@ const Service: FC = () => {
                 <p className={phraseCss}>Zazimování</p>
               </span>
             }
-            cardParagraph="Po všech těch divokých letních vyjížďách dopřej svýmu parťákovi lázně, ať mu je v zimě ve sklepě dobře. Na jaře na tebe bude nadšeně čekat, připravenej a natěšenej na to, až mu zase roztočíš kolečka."
+            cardParagraph="Po všech těch divokých letních vyjížďkách dopřej svýmu parťákovi lázně, ať mu je v zimě ve sklepě dobře. Na jaře na tebe bude nadšeně čekat, připravenej a natěšenej na to, až mu zase roztočíš kolečka."
           />
           <Card
             cardTitle={

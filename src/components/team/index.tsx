@@ -15,11 +15,11 @@ const Team: FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
-        className="text-4xl font-bold text-center sm:pt-16 mb-8"
+        className="text-4xl font-bold text-center lg:pt-16 mb-8"
       >
         Náš tým
       </motion.h2>
-      <div className="flex flex-col sm:flex-row">
+      <div className="flex flex-col lg:flex-row">
         <Card className="flex flex-col" cardBackgroundColor="bg-gray-800">
           <Martin />
         </Card>
@@ -27,7 +27,7 @@ const Team: FC = () => {
           <Tomas />
         </Card>
       </div>
-      <div className="flex flex-col sm:flex-row mb-12">
+      <div className="flex flex-col lg:flex-row mb-12">
         <Card className="flex flex-col" cardBackgroundColor="bg-gray-800">
           <Maty />
         </Card>

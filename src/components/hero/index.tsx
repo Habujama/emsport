@@ -1,5 +1,4 @@
-import { FC } from 'react'
-import classNames from 'classnames'
+import { FC, Fragment } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { motion } from 'framer-motion'
 import { useMedia } from 'react-use'
@@ -9,11 +8,10 @@ const { screens } = theme
 
 const Hero: FC = () => {
   const isNotMobile = useMedia(`(min-width: ${screens.md})`)
-  const imageCss = classNames('flex flex-col')
 
   return (
     <>
-      <div className="flex flex-col sm:grid grid-cols-2 gap-x-10 justify-between md:mt-12">
+      <div className="flex flex-col sm:grid grid-cols-2 lg:gap-x-20 justify-between">
         <div className="flex flex-col max-w-md p-4 sm:p-0 mx-auto lg:mx-0 justify-center">
           <motion.h1
             initial={{ opacity: 0 }}
@@ -37,37 +35,51 @@ const Hero: FC = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ staggerChildren: 0.5 }}
             className="flex flex-col sm:col-start-2"
           >
+            <Fragment />
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 100 }}
+              initial={{ opacity: 0, y: 0 }}
+              animate={{ opacity: 1, y: 80 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
               <StaticImage
-                src="../../assets/hero/koula-tym.png"
-                alt="Martin Koula"
-                title="Martin Koula"
-                height={334}
+                src="../../assets/hero/monika-tym.png"
+                alt="Monika Malečková"
+                title="Monika Malečková"
+                width={230}
                 placeholder="blurred"
                 layout="fixed"
-                className={`${imageCss} -mt-12 lg:-mt-16 -ml-12 lg:-ml-56`}
               />
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 220 }}
-              transition={{ duration: 1, delay: 0.1 }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 100, scale: 1.1 }}
+              transition={{ duration: 1, delay: 0.2 }}
             >
               <StaticImage
                 src="../../assets/hero/tata-tym.png"
                 alt="Martin Matoušek"
                 title="Martin Matoušek"
-                height={282}
+                width={220}
                 placeholder="blurred"
                 layout="fixed"
-                className={`${imageCss} -mr-56 -mt-64`}
+                className="-mt-0 lg:-mt-12 -ml-4 lg:-ml-44"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 110 }}
+              transition={{ duration: 1, delay: 0.1 }}
+            >
+              <StaticImage
+                src="../../assets/hero/koula-tym.png"
+                alt="Martin Koula"
+                title="Martin Koula"
+                width={250}
+                placeholder="blurred"
+                layout="fixed"
+                className="-mt-40 lg:-mt-64 -mr-0 md:-mr-56 -ml-12 lg:-ml-0"
               />
             </motion.div>
             <motion.div
@@ -79,10 +91,10 @@ const Hero: FC = () => {
                 src="../../assets/hero/tomas-tym.png"
                 alt="Tomáš Řenč"
                 title="Tomáš Řenč"
-                height={320}
+                width={250}
                 placeholder="blurred"
                 layout="fixed"
-                className={`${imageCss} -mt-56 -ml-12 mb-8`}
+                className="-mt-48 lg:-mt-52 -ml-24 mb-8"
               />
             </motion.div>
           </motion.div>
@@ -100,7 +112,6 @@ const Hero: FC = () => {
               height={250}
               placeholder="blurred"
               layout="fixed"
-              className={imageCss}
             />
           </motion.div>
         )}
