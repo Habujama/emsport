@@ -22,7 +22,7 @@ const TopProducts: FC = () => {
               titulnFoto {
                 gatsbyImageData(
                   height: 150
-                  placeholder: DOMINANT_COLOR
+                  placeholder: BLURRED
                   formats: AUTO
                 )
               }
