@@ -14,10 +14,11 @@ enum ButtonSize {
   LARGE = 'large',
 }
 type Size = 'small' | 'medium' | 'large'
-type Type = 'ghost' | 'primary' | 'secondary'
+type ButtonStyle = 'ghost' | 'primary' | 'secondary'
 type Target = '_blank'
 export interface ButtonProps {
-  type?: Type
+  buttonStyle?: ButtonStyle
+  type?: 'button' | 'submit'
   size?: Size
   target?: Target
   href?: string
@@ -29,7 +30,8 @@ export interface ButtonProps {
 
 const Button: FC<ButtonProps> = ({
   size = ButtonSize.MEDIUM,
-  type = ButtonType.PRIMARY,
+  buttonStyle = ButtonType.PRIMARY,
+  type = 'button',
   href,
   target,
   to,
@@ -43,13 +45,13 @@ const Button: FC<ButtonProps> = ({
     className,
     {
       'bg-transparent hover:bg-blue-300 hover:ease-in-out hover:duration-500 hover:text-black-900 active:ring-4 active:ring-blue-100 active:scale-90':
-        ButtonType.GHOST === type,
+        ButtonType.GHOST === buttonStyle,
 
       'bg-blue-300 text-gray-800 hover:bg-blue-400 hover:ease-in-out hover:duration-500 hover:scale-110 active:ring-4 active:ring-blue-100 active:scale-80':
-        ButtonType.PRIMARY === type,
+        ButtonType.PRIMARY === buttonStyle,
 
       'border-2 border-solid border-blue-300 text-blue-400 hover:border-blue-400 shadow-lg hover:bg-blue-400 hover:text-white hover:ease-in-out hover:duration-500 active:ring-4 active:ring-blue-100 transform active:scale-90':
-        ButtonType.SECONDARY === type,
+        ButtonType.SECONDARY === buttonStyle,
 
       'py-2 px-2': ButtonSize.SMALL === size,
       'py-3 px-3 leading-7': ButtonSize.MEDIUM === size,
@@ -59,7 +61,7 @@ const Button: FC<ButtonProps> = ({
 
   if (to) {
     return (
-      <Link to={to} className={css} ref={ref}>
+      <Link to={to} className={css} ref={ref} type={type}>
         {children}
       </Link>
     )
@@ -69,14 +71,21 @@ const Button: FC<ButtonProps> = ({
     const rel = target && 'noopener noreferrer'
 
     return (
-      <a href={href} className={css} target={target} rel={rel} ref={ref}>
+      <a
+        href={href}
+        className={css}
+        target={target}
+        rel={rel}
+        ref={ref}
+        type={type}
+      >
         {children}
       </a>
     )
   }
 
   return (
-    <motion.button className={css} type="button" ref={ref}>
+    <motion.button className={css} ref={ref} type={type}>
       {children}
     </motion.button>
   )

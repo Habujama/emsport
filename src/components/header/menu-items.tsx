@@ -38,7 +38,7 @@ const MenuItems: FC<Props> = ({ toggle }) => {
       >
         <Button
           to="/servis"
-          type="ghost"
+          buttonStyle="ghost"
           size="large"
           className="sm:mr-4"
           onClick={toggle}
@@ -48,7 +48,7 @@ const MenuItems: FC<Props> = ({ toggle }) => {
 
         <Button
           to="/pujcovna"
-          type="ghost"
+          buttonStyle="ghost"
           size="large"
           className="sm:mr-4"
           onClick={toggle}
@@ -58,7 +58,7 @@ const MenuItems: FC<Props> = ({ toggle }) => {
 
         <Button
           to="/e-shop"
-          type="ghost"
+          buttonStyle="ghost"
           size="large"
           className="sm:mr-4"
           onClick={toggle}
@@ -68,7 +68,7 @@ const MenuItems: FC<Props> = ({ toggle }) => {
 
         <Button
           to="/#kontakt"
-          type="ghost"
+          buttonStyle="ghost"
           size="large"
           className="sm:mr-4"
           onClick={toggle}

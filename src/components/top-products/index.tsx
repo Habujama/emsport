@@ -62,7 +62,7 @@ const TopProducts: FC = () => {
       <div className="flex">
         <Button
           to="/e-shop"
-          type="primary"
+          buttonStyle="primary"
           size="large"
           className="mt-8 mx-auto"
         >

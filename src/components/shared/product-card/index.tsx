@@ -41,7 +41,11 @@ const ProductCard: FC<Props> = ({
       {title}
     </h4>
     <p className="leading-5 text-gray-800">{description}</p>
-    <Button className="block mx-auto mt-6" type="secondary" to={buttonTo}>
+    <Button
+      className="block mx-auto mt-6"
+      buttonStyle="secondary"
+      to={buttonTo}
+    >
       {buttonText}
     </Button>
   </motion.div>

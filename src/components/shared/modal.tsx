@@ -23,11 +23,7 @@ const Modal: FC<Props> = ({ children, toggle, className }) => {
   return (
     <div className={containerCss} ref={clickRef} data-testid="modal-container">
       <div className="text-center">
-        <Button
-          onClick={toggle}
-          size="large"
-          label="Hide The Chosen One"
-        ></Button>
+        <Button onClick={toggle} size="large"></Button>
       </div>
       {children}
     </div>

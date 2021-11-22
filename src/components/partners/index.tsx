@@ -22,15 +22,10 @@ const Partners: FC = () => {
   `)
 
   return (
-    <motion.div className="flex flex-col p-4">
-      <motion.h2
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
-        className="text-4xl font-bold text-center sm:pt-16 mb-8"
-      >
+    <div className="flex flex-col p-4">
+      <h2 className="text-4xl font-bold text-center sm:pt-16 mb-8">
         Máme pro tebe kola a doplňky od těchhle borců
-      </motion.h2>
+      </h2>
       <div className="flex space-x-4 items-center self-center">
         {allContentfulAsset.edges.map(({ node }) => (
           <div
@@ -51,7 +46,7 @@ const Partners: FC = () => {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   )
 }
 
