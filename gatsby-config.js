@@ -76,6 +76,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-breakpoints`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

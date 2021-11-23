@@ -15,7 +15,7 @@ const Team: FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
-        className="text-4xl font-bold text-center lg:pt-16 mb-8"
+        className="text-2xl sm:text-4xl font-bold text-center lg:pt-16 sm:mb-8 my-8"
       >
         Náš tým
       </motion.h2>

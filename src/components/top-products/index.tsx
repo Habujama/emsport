@@ -34,12 +34,12 @@ const TopProducts: FC = () => {
   `)
 
   return (
-    <div className="mb-8">
+    <div className="mb-12">
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
-        className="text-4xl font-bold text-center sm:pt-16 mb-8"
+        className="text-2xl sm:text-4xl font-bold text-center sm:pt-16 mb-8 p-4 rounded-md sm:rounded-none sm:p-0"
       >
         To nejlepší pro tebe
       </motion.h2>

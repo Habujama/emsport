@@ -25,7 +25,7 @@ module.exports = {
     ecmaVersion: 11,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'jest'],
+  plugins: ['react', '@typescript-eslint'],
   ignorePatterns: [
     'static',
     'src/utils/borrower.calc.min.js',

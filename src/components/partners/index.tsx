@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import { motion } from 'framer-motion'
 import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
@@ -23,14 +22,14 @@ const Partners: FC = () => {
 
   return (
     <div className="flex flex-col p-4">
-      <h2 className="text-4xl font-bold text-center sm:pt-16 mb-8">
+      <h2 className="text-2xl sm:text-4xl font-bold text-center sm:pt-16 mb-8">
         Máme pro tebe kola a doplňky od těchhle borců
       </h2>
-      <div className="flex space-x-4 items-center self-center">
+      <div className="flex space-x-4 items-center self-center rounded-md sm:rounded-none p-8 sm:p-0">
         {allContentfulAsset.edges.map(({ node }) => (
           <div
             key={node.id}
-            className="bg-white rounded-full border-gray-700 border-2 shadow-sm transform hover:scale-110 p-6"
+            className="sm:bg-white sm:rounded-full sm:border-gray-700 sm:border-2 sm:shadow-sm transform hover:scale-110 sm:p-6 items-center self-center"
           >
             <a
               href={node.description.substring(8).trim()}

@@ -1,8 +1,10 @@
 import { FC } from 'react'
+import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import { StaticImage } from 'gatsby-plugin-image'
 import { motion } from 'framer-motion'
 
 const Hero: FC = () => {
+  const breakpoints = useBreakpoint()
   return (
     <div className="flex flex-col lg:flex-row space-between justify-center">
       <div className="flex flex-col max-w-md p-4 sm:p-0 mx-auto lg:mx-0 justify-center z-10">
@@ -24,72 +26,83 @@ const Hero: FC = () => {
           a&nbsp;funkční oblečení.
         </motion.h2>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="xl:ml-44 flex overflow-x-scroll overflow-y-hidden sm:overflow-x-visible mb-10 md:mb-0"
-      >
+      {breakpoints.sm ? (
+        <StaticImage
+          src="../../assets/hero/emsport-tym-cely.png"
+          alt="eM SPORT Slaný"
+          title="eM SPORT Slaný"
+          width={250}
+          placeholder="blurred"
+          layout="fixed"
+          className="mx-auto"
+        />
+      ) : (
         <motion.div
-          initial={{ opacity: 0, y: 0 }}
-          animate={{ opacity: 1, y: 80 }}
-          transition={{ duration: 1, delay: 0.1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="xl:ml-44 flex overflow-x-scroll overflow-y-hidden sm:overflow-x-visible mb-10 md:mb-0"
         >
-          <StaticImage
-            src="../../assets/hero/monika-tym.png"
-            alt="Monika Malečková"
-            title="Monika Malečková"
-            width={250}
-            placeholder="blurred"
-            layout="fixed"
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 1, y: 110 }}
+            transition={{ duration: 1, delay: 0.1 }}
+          >
+            <StaticImage
+              src="../../assets/hero/monika-tym.png"
+              alt="Monika Malečková"
+              title="Monika Malečková"
+              width={250}
+              placeholder="blurred"
+              layout="fixed"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 100, scale: 1.1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+            <StaticImage
+              src="../../assets/hero/tata-tym.png"
+              alt="Martin Matoušek"
+              title="Martin Matoušek"
+              width={220}
+              placeholder="blurred"
+              layout="fixed"
+              className="mt-20 -ml-40 lg:mt-20 lg:-ml-44"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 10 }}
+            transition={{ duration: 1, delay: 0.1 }}
+          >
+            <StaticImage
+              src="../../assets/hero/koula-tym.png"
+              alt="Martin Koula"
+              title="Martin Koula"
+              width={250}
+              placeholder="blurred"
+              layout="fixed"
+              className="mt-4 ml-2"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0, x: -220 }}
+            transition={{ duration: 1 }}
+          >
+            <StaticImage
+              src="../../assets/hero/tomas-tym.png"
+              alt="Tomáš Řenč"
+              title="Tomáš Řenč"
+              width={250}
+              placeholder="blurred"
+              layout="fixed"
+              className="mt-10 ml-40 lg:mt-40 lg:mb-8 lg:-ml-40"
+            />
+          </motion.div>
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 100, scale: 1.1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-        >
-          <StaticImage
-            src="../../assets/hero/tata-tym.png"
-            alt="Martin Matoušek"
-            title="Martin Matoušek"
-            width={220}
-            placeholder="blurred"
-            layout="fixed"
-            className="mt-20 -ml-40 lg:mt-20 lg:-ml-44"
-          />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 10 }}
-          transition={{ duration: 1, delay: 0.1 }}
-        >
-          <StaticImage
-            src="../../assets/hero/koula-tym.png"
-            alt="Martin Koula"
-            title="Martin Koula"
-            width={250}
-            placeholder="blurred"
-            layout="fixed"
-            className="mt-4 ml-2"
-          />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: 1, y: 0, x: -220 }}
-          transition={{ duration: 1 }}
-        >
-          <StaticImage
-            src="../../assets/hero/tomas-tym.png"
-            alt="Tomáš Řenč"
-            title="Tomáš Řenč"
-            width={250}
-            placeholder="blurred"
-            layout="fixed"
-            className="mt-10 ml-40 lg:mt-40 lg:mb-8 lg:-ml-40"
-          />
-        </motion.div>
-      </motion.div>
+      )}
     </div>
   )
 }

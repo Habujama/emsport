@@ -1,6 +1,5 @@
 import { FC } from 'react'
-import { useMedia } from 'react-use'
-import theme from 'tailwindcss/defaultTheme'
+import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -10,17 +9,15 @@ import Catchphrase from '../components/catchphrase/index'
 import Partners from '../components/partners'
 import Team from '../components/team'
 
-const { screens } = theme
-
 const IndexPage: FC = () => {
-  const isNotMobile = useMedia(`(min-width: ${screens.lg})`)
+  const breakpoints = useBreakpoint()
   return (
     <Layout>
       <SEO title="Hlavní stránka" />
       <Hero />
       <TopProducts />
       <Catchphrase />
-      {isNotMobile && <Partners />}
+      {breakpoints.sm ? null : <Partners />}
       <Team />
     </Layout>
   )
