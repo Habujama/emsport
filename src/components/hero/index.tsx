@@ -26,17 +26,7 @@ const Hero: FC = () => {
           a&nbsp;funkční oblečení.
         </motion.h2>
       </div>
-      {breakpoints.sm ? (
-        <StaticImage
-          src="../../assets/hero/emsport-tym-cely.png"
-          alt="eM SPORT Slaný"
-          title="eM SPORT Slaný"
-          width={250}
-          placeholder="blurred"
-          layout="fixed"
-          className="mx-auto"
-        />
-      ) : (
+      {breakpoints.sm ? null : (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -48,7 +38,7 @@ const Hero: FC = () => {
             transition={{ duration: 1, delay: 0.1 }}
           >
             <StaticImage
-              src="../../assets/hero/monika-tym.png"
+              src="../../assets/hero/emsportak-hero.png"
               alt="Monika Malečková"
               title="Monika Malečková"
               width={250}

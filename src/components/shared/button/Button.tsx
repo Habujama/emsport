@@ -22,7 +22,7 @@ export interface ButtonProps {
   size?: Size
   target?: Target
   href?: string
-  to?: string
+  to?: string | void
   disabled?: boolean
   className?: string
   onClick?: () => void

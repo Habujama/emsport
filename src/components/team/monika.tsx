@@ -7,7 +7,7 @@ const Monika: FC = () => {
     <>
       <div>
         <StaticImage
-          src="../../assets/hero/monika-tym.png"
+          src="../../assets/hero/emsportak-hero.png"
           alt="Monika Malečková"
           height={230}
           placeholder="blurred"

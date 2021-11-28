@@ -4,12 +4,12 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Shop from '../components/shop'
 
-const EShop: FC = () => {
+const Nabidka: FC = () => {
   return (
     <Layout>
-      <SEO title="E-shop" />
+      <SEO title="Nabídka" />
       <Shop />
     </Layout>
   )
 }
-export default EShop
+export default Nabidka

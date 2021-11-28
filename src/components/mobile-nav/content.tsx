@@ -35,7 +35,7 @@ export const Content: FC<Props> = ({ toggle }) => {
   return (
     <motion.div
       variants={variants}
-      className="absolute left-0 top-0 flex flex-col space-y-4 items-center text-xl w-screen h-screen p-6 outline-none mt-24"
+      className="absolute left-0 top-0 flex flex-col space-y-4 items-center text-xl outline-none w-screen h-screen p-6 mt-24"
     >
       <Link to="/servis" className={linkCss} onClick={toggle}>
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
@@ -49,9 +49,9 @@ export const Content: FC<Props> = ({ toggle }) => {
         </motion.div>
       </Link>
 
-      <Link to="/e-shop" className={linkCss} onClick={toggle}>
+      <Link to="/nabidka" className={linkCss} onClick={toggle}>
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-          E-shop
+          Nabídka
         </motion.div>
       </Link>
 

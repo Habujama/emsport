@@ -57,13 +57,13 @@ const MenuItems: FC<Props> = ({ toggle }) => {
         </Button>
 
         <Button
-          to="/e-shop"
+          to="/nabidka"
           buttonStyle="ghost"
           size="large"
           className="sm:mr-4"
           onClick={toggle}
         >
-          <h1 className="">E-shop</h1>
+          <h1 className="">Nabídka</h1>
         </Button>
 
         <Button

@@ -23,7 +23,7 @@ const sidebar = {
 
 const MobileOverlay: FC = () => (
   <motion.div
-    className="fixed top-0 bottom-0 right-0 w-full bg-black-900 mt-24"
+    className="fixed top-0 bottom-0 right-0 w-full bg-black-900 mt-16"
     variants={sidebar}
   />
 )

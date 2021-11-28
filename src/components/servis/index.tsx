@@ -13,6 +13,7 @@ import {
 import { faSmileWink } from '@fortawesome/free-regular-svg-icons'
 
 import Card from '../shared/card'
+import PageTitle from '../shared/page-title'
 
 const Service: FC = () => {
   const faImageLiCss = classNames('text-blue-400 text-3xl self-center')
@@ -57,25 +58,16 @@ const Service: FC = () => {
           />
         </motion.div>
       </div>
-      <motion.h2
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
-        className="text-5xl font-barlow font-semibold text-center uppercase pt-8 sm:pt-12"
-      >
-        SERVIS KOL
-      </motion.h2>
-      <h4 className="text-xl sm:text-2xl sm:pt-12 text-center mx-auto leading-10 mb-2">
-        O&nbsp;servis se u&nbsp;nás starají{' '}
-        <strong>dva&nbsp;největší borci široko daleko</strong>. Pravidelně je
-        posíláme na školení a&nbsp;v&nbsp;dílně mají to{' '}
-        <strong>nejlepší vybavení</strong>. Naši mechanici{' '}
-        <strong>Tomáš Řenč</strong> a&nbsp;<strong>Martin Koula</strong> mají
+      <PageTitle
+        title="Servis kol"
+        description="O&nbsp;servis se u&nbsp;nás starají
+        dva&nbsp;největší borci široko daleko. Pravidelně je
+        posíláme na školení a&nbsp;v&nbsp;dílně mají to
+        nejlepší vybavení. Naši mechanici
+        Tomáš Řenč a&nbsp;Martin Koula mají
         navíc zkušenosti z&nbsp;profi závodů po&nbsp;celém světě a &nbsp;ladění
-        vlastních špičkových&nbsp;kol.
-        <br />
-        Už valíš oči? Tak čti dál!
-      </h4>
+        vlastních špičkových&nbsp;kol."
+      />
       <div className="justify-between mx-auto mb-16">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -158,8 +150,8 @@ const Service: FC = () => {
               <strong>400&nbsp;Kč&nbsp;+&nbsp;materiál</strong>.
             </p>
             <p>
-              Spěcháš? Zaplať 600 Kč za hodinu a o tvůj stroj se postaráme
-              přednostně.
+              Spěcháš? Zaplať 600&nbsp;Kč za hodinu a&nbsp;o&nbsp;tvůj stroj
+              se&nbsp;postaráme přednostně.
               <FontAwesomeIcon icon={faSmileWink} className="mt-1 ml-2" />
             </p>
           </span>

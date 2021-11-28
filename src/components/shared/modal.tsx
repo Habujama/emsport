@@ -9,9 +9,15 @@ export interface Props {
   className?: string
   left?: string
   top?: string
+  buttonText?: string
 }
 
-const Modal: FC<Props> = ({ children, toggle, className }) => {
+const Modal: FC<Props> = ({
+  children,
+  toggle,
+  className,
+  buttonText = 'Zavřít',
+}) => {
   const containerCss = classNames(
     'fixed lg:w-1/2 left-1/2 top-1/2 bg-white shadow-md rounded-2xl transform -translate-y-1/2 -translate-x-1/2  z-40 px-24 pt-16 pb-20',
     className
@@ -23,7 +29,9 @@ const Modal: FC<Props> = ({ children, toggle, className }) => {
   return (
     <div className={containerCss} ref={clickRef} data-testid="modal-container">
       <div className="text-center">
-        <Button onClick={toggle} size="large"></Button>
+        <Button onClick={() => toggle()} size="large">
+          {buttonText}
+        </Button>
       </div>
       {children}
     </div>

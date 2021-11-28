@@ -4,7 +4,9 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 
+import PageTitle from '../shared/page-title'
 import ProductCard from '../shared/product-card'
+import WinterRental from './winter-rental'
 
 const Rental: FC = () => {
   const { allContentfulEntry } = useStaticQuery(graphql`
@@ -50,21 +52,14 @@ const Rental: FC = () => {
 
   return (
     <div className="flex flex-col p-4">
-      <motion.h2
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
-        className="text-5xl font-barlow font-semibold text-center uppercase pt-8 sm:pt-12"
-      >
-        PŮJČOVNA
-      </motion.h2>
-      <h4 className="text-xl sm:text-2xl sm:pt-12 text-center mx-auto leading-10 mb-2">
-        Plánuješ velkej výlet a&nbsp;chybí ti na něj vybavení? Máš doma malý
+      <PageTitle
+        title="Půjčovna"
+        description="Plánuješ velkej výlet a&nbsp;chybí ti na něj vybavení? Máš doma malý
         cyklisty a&nbsp;chybí ti&nbsp;na&nbsp;ně&nbsp;tyč? Tažná tyč? Chceš
         si&nbsp;vyzkoušet elektrokolo a&nbsp;zjistit, že už na jiným kole jezdit
-        nebudeš? Půjč si&nbsp;to&nbsp;u&nbsp;nás!
-      </h4>
-
+        nebudeš? Půjč si&nbsp;to&nbsp;u&nbsp;nás!"
+      />
+      <WinterRental />
       <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-4 gap-y-4 my-16 mx-auto">
         {allContentfulEntry.edges.map(
           ({ node: { titulek, cenaZaDen, popis, id, titulnFoto } }) => {
@@ -81,14 +76,15 @@ const Rental: FC = () => {
           }
         )}
       </div>
-      <motion.h2
+
+      <motion.h3
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
         className="text-3xl text-blue-300 text-center font-barlow font-medium pb-8"
       >
         Vybral sis? Dej nám vědět!
-      </motion.h2>
+      </motion.h3>
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

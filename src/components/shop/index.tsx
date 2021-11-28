@@ -5,6 +5,7 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 
 import ProductCard from '../shared/product-card'
+import PageTitle from '../shared/page-title'
 
 const Shop: FC = () => {
   const { allContentfulEntry } = useStaticQuery(graphql`
@@ -53,18 +54,11 @@ const Shop: FC = () => {
 
   return (
     <div className="flex flex-col p-4">
-      <motion.h2
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
-        className="text-5xl font-barlow font-semibold text-center uppercase pt-8 sm:pt-12"
-      >
-        E-SHOP
-      </motion.h2>
-      <h4 className="text-xl sm:text-2xl pt-8 sm:pt-12 text-center mx-auto leading-10 mb-2">
-        Vyber si z naší online nabídky. Nebo přijď k nám na prodejnu,
-        rádi&nbsp;tě&nbsp;uvidíme!
-      </h4>
+      <PageTitle
+        title="Nabídka"
+        description="Prohlídni si výběr našich nejoblíbenějších kousků. Nebo přijď k nám na prodejnu,
+        tam jich je mnohem víc!"
+      />
       <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-x-4 gap-y-4 my-16">
         {allContentfulEntry.edges.map(
           ({ node: { titulek, popis, cena, id, titulnFoto } }) => {

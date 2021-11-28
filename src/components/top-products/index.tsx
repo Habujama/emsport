@@ -43,7 +43,7 @@ const TopProducts: FC = () => {
       >
         To nejlepší pro tebe
       </motion.h2>
-      <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 items-center justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-4 grid-rows-4 sm:grid-rows-1 sm:gap-x-4 gap-y-4">
         {allContentfulEntry.edges.map(
           ({ node: { titulek, cena, id, titulnFoto } }) => {
             return titulek !== undefined ? (
@@ -53,7 +53,7 @@ const TopProducts: FC = () => {
                 titlePhoto={titulnFoto}
                 key={id}
                 buttonText="Ukaž mi ho!"
-                buttonTo="/e-shop"
+                buttonTo="/nabidka"
               />
             ) : null
           }
@@ -61,7 +61,7 @@ const TopProducts: FC = () => {
       </div>
       <div className="flex">
         <Button
-          to="/e-shop"
+          to="/nabidka"
           buttonStyle="primary"
           size="large"
           className="mt-8 mx-auto"

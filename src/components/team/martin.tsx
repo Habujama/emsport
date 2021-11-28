@@ -23,7 +23,8 @@ const Martin: FC = () => {
           Martin Koula
         </motion.h2>
         <h4 className="text-xl font-semibold sm:pt-4 leading-10 mb-2">
-          mechanik, silniční a&nbsp;bajkový závodník, člen týmu VIPRO cycling
+          mechanik, silniční a&nbsp;bajkový závodník, člen týmu XEELO
+          Cycling&nbsp;Team
         </h4>
         <p>
           Postará se&nbsp;o&nbsp;vaše kolo stejně, jako se stará o&nbsp;kola
