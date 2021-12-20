@@ -11,7 +11,7 @@ const Footer: FC = () => {
       <div className="grid grid-rows-4 grid-cols-1 sm:grid-rows-1 sm:grid-cols-4 gap-y-2 sm:gap-x-4 max-w-screen-xl">
         <div className="row-start-2 sm:row-start-1 row-span-1 sm:col-start-1 col-span-1 flex flex-col">
           <address className="not-italic" id="kontakt">
-            <h4 className="text-lg font-bold mb-2">eM Sport Slaný</h4>
+            <h4 className="font-bold mb-2">eM Sport Slaný</h4>
             <p>Třebízského 161</p>
             <p>Slaný 274 01</p>
             <p>IČ: 71404201</p>
@@ -42,8 +42,11 @@ const Footer: FC = () => {
           </address>
         </div>
 
-        <div className="row-start-1 row-span-1 sm:col-start-2 col-span-1 flex flex-col">
+        <div className="row-start-1 row-span-1 sm:col-start-2 col-span-2 flex flex-col">
           <h4 className="text-lg font-bold mb-2">Otevírací doba</h4>
+          <h3 className="text-lg font-bold mb-2">
+            Od 24. 12. do 2. 1. 2022 máme zavřeno.
+          </h3>
           <dl className="flex flex-row flex-wrap after:block">
             <dt className="flex-shrink-0 flex-grow-0 w-1/3">Pondělí</dt>
             <dd className="flex-shrink-0 flex-grow-0 ml-auto text-left w-2/3">
