@@ -44,7 +44,7 @@ const Button: FC<ButtonProps> = ({
     'transform  text-center outline-none whitespace-no-wrap rounded-md px-4',
     className,
     {
-      'bg-transparent hover:bg-blue-300 hover:ease-in-out hover:duration-500 hover:text-black-900 active:ring-4 active:ring-blue-100 active:scale-90':
+      'bg-transparent hover:bg-blue-300 hover:ease-in-out hover:duration-500 hover:text-black-900 text-black-50 active:ring-4 active:ring-blue-100 active:scale-90':
         ButtonType.GHOST === buttonStyle,
 
       'bg-blue-300 text-gray-800 hover:bg-blue-400 hover:ease-in-out hover:duration-500 hover:scale-110 active:ring-4 active:ring-blue-100 active:scale-80':

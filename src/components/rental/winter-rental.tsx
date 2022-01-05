@@ -101,9 +101,9 @@ const WinterRental: FC = () => {
             <td className={tableCell}>
               <h3 className={itemTitle}>Střešní box</h3>
             </td>
-            <td className={tableCell}>350</td>
-            <td className={tableCell}>450</td>
-            <td className={tableCell}>790</td>
+            <td className={tableCell}>300</td>
+            <td className={tableCell}>800</td>
+            <td className={tableCell}>1500</td>
             <td className={tableCell}></td>
           </motion.tr>
         </motion.table>

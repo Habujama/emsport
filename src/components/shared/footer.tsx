@@ -44,9 +44,6 @@ const Footer: FC = () => {
 
         <div className="row-start-1 row-span-1 sm:col-start-2 col-span-2 flex flex-col">
           <h4 className="text-lg font-bold mb-2">Otevírací doba</h4>
-          <h3 className="text-lg font-bold mb-2">
-            Od 24. 12. do 2. 1. 2022 máme zavřeno.
-          </h3>
           <dl className="flex flex-row flex-wrap after:block">
             <dt className="flex-shrink-0 flex-grow-0 w-1/3">Pondělí</dt>
             <dd className="flex-shrink-0 flex-grow-0 ml-auto text-left w-2/3">
