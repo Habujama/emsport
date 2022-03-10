@@ -1,15 +1,33 @@
 import { FC } from 'react'
+import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 
-const Notification: FC = ({ children }) => {
+interface Props {
+  title: string
+  description: any
+}
+
+const Notification: FC<Props> = ({ title, description }) => {
+  /* eslint-disable react/display-name */
+  const options = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (_, children) => <p className="mb-4">{children}</p>,
+    },
+    renderMark: {
+      [MARKS.BOLD]: text => <strong>{text}</strong>,
+      [MARKS.UNDERLINE]: text => <span className="underline">{text}</span>,
+      [MARKS.ITALIC]: text => <em>{text}</em>,
+      [MARKS.CODE]: text => `${text}`,
+    },
+  }
+  /* eslint-enable react/display-name */
   return (
-    <div className="max-w-md bg-white border-2 border-gray-700 rounded-md shadow-md p-6 pt-4 md:p-12 mx-auto">
+    <div className="max-w-md bg-white border-2 border-gray-700 rounded-md shadow-md p-6 md:p-12 mx-auto">
       <h3 className="text-blue-900 font-medium text-xl text-center mb-2">
-        Výprodej lyžařského vybavení
+        {title}
       </h3>
       <p className="font-semibold text-gray-700">
-        Přeskáče od&nbsp;200&nbsp;Kč, lyže od 300 Kč a&nbsp;hůlky
-        po&nbsp;80&nbsp;Kč. Vše použité z&nbsp;půjčovny, ale funkční.
-        {children}
+        {renderRichText(description, options)}
       </p>
     </div>
   )

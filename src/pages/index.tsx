@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -13,11 +14,35 @@ import Notification from '../components/shared/notification'
 const IndexPage: FC = () => {
   const breakpoints = useBreakpoint()
 
+  const { allContentfulNotifikace } = useStaticQuery(graphql`
+    query {
+      allContentfulNotifikace {
+        edges {
+          node {
+            krtkText {
+              raw
+            }
+            titulek
+          }
+        }
+      }
+    }
+  `)
+
+  const NotificationContent = allContentfulNotifikace.edges[0].node
+
   return (
     <Layout>
       <SEO title="Hlavní stránka" />
       <Hero />
-      <Notification />
+      {NotificationContent ? (
+        <Notification
+          title={NotificationContent.titulek}
+          description={NotificationContent.krtkText}
+        />
+      ) : (
+        'neeee'
+      )}
       <TopProducts />
       <Catchphrase />
       {breakpoints.sm || breakpoints.md ? null : <Partners />}
