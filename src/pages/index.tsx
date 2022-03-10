@@ -8,16 +8,19 @@ import TopProducts from '../components/top-products'
 import Catchphrase from '../components/catchphrase/index'
 import Partners from '../components/partners'
 import Team from '../components/team'
+import Notification from '../components/shared/notification'
 
 const IndexPage: FC = () => {
   const breakpoints = useBreakpoint()
+
   return (
     <Layout>
       <SEO title="Hlavní stránka" />
       <Hero />
+      <Notification />
       <TopProducts />
       <Catchphrase />
-      {breakpoints.sm ? null : <Partners />}
+      {breakpoints.sm || breakpoints.md ? null : <Partners />}
       <Team />
     </Layout>
   )
