@@ -36,12 +36,12 @@ const OpeningHours: FC = () => {
       )}
       <span className="flex flex-col">
         <h3 className="text-base text-center">
-          {hourRightNow > openingHours.start && hourRightNow < openingHours.end
+          {timeRightNow > openingHours.start && timeRightNow < openingHours.end
             ? 'Teď máme otevřeno'
             : 'Teď máme zavřeno'}
         </h3>
-        {hourRightNow > openingHours.start &&
-        hourRightNow < openingHours.end ? (
+        {timeRightNow > openingHours.start &&
+        timeRightNow < openingHours.end ? (
           <a
             href="tel:775 710 011"
             className="text-lg flex text-center hover:text-blue-300"
