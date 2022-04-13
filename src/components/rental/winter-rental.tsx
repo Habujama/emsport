@@ -59,13 +59,13 @@ const WinterRental: FC = () => {
             <td className={tableCell}>
               <h3 className={itemTitle}>Dětský komplet</h3>
               <p className="hidden sm:block">
-                (do 18 let - boty, lyže, hůlky, lyžařská přilba)
+                (do 15 let - boty, lyže, hůlky, lyžařská přilba)
               </p>
             </td>
-            <td className={tableCell}>590</td>
-            <td className={tableCell}>890</td>
-            <td className={tableCell}>1&nbsp;200</td>
-            <td className={tableCell}>2&nbsp;990</td>
+            <td className={tableCell}>790</td>
+            <td className={tableCell}>990</td>
+            <td className={tableCell}>1&nbsp;490</td>
+            <td className={tableCell}>3&nbsp;490</td>
           </motion.tr>
           <motion.tr>
             <td className={tableCell}>
@@ -74,10 +74,10 @@ const WinterRental: FC = () => {
                 (od 18 let - boty, lyže, hůlky, lyžařská přilba)
               </p>
             </td>
-            <td className={tableCell}>690</td>
-            <td className={tableCell}>1&nbsp;000</td>
-            <td className={tableCell}>1&nbsp;800</td>
-            <td className={tableCell}>3&nbsp;990</td>
+            <td className={tableCell}>990</td>
+            <td className={tableCell}>1&nbsp;290</td>
+            <td className={tableCell}>1&nbsp;990</td>
+            <td className={tableCell}>4&nbsp;490</td>
           </motion.tr>
           <motion.tr>
             <td className={tableCell}>
@@ -136,6 +136,12 @@ const WinterRental: FC = () => {
               <h3 className={itemTitle}>Oprava skluznice</h3>
             </td>
             <td className={tableCell}>od 100&nbsp;Kč dle poškození</td>
+          </motion.tr>
+          <motion.tr>
+            <td className={tableCell}>
+              <h3 className={itemTitle}>Seřízení lyží</h3>
+            </td>
+            <td className={tableCell}>200&nbsp;Kč</td>
           </motion.tr>
         </motion.table>
       </Card>
