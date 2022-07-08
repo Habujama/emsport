@@ -1,11 +1,10 @@
-import { FC } from 'react'
 import { motion } from 'framer-motion'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import ProductCard from '../shared/product-card/'
 import Button from '../shared/button/Button'
 
-const TopProducts: FC = () => {
+const TopProducts = () => {
   const { allContentfulEntry } = useStaticQuery(graphql`
     query MyQuery {
       allContentfulEntry(limit: 4) {
@@ -45,15 +44,16 @@ const TopProducts: FC = () => {
       </motion.h2>
       <div className="grid grid-cols-1 sm:grid-cols-4 grid-rows-4 sm:grid-rows-1 sm:gap-x-4 gap-y-4">
         {allContentfulEntry.edges.map(
-          ({ node: { titulek, cena, id, titulnFoto } }) => {
+          ({ node: { titulek, cena, id, popis, titulnFoto } }) => {
             return titulek !== undefined ? (
               <ProductCard
                 title={titulek}
                 price={cena}
+                description={popis}
                 titlePhoto={titulnFoto}
                 key={id}
                 buttonText="Ukaž mi ho!"
-                buttonTo="/nabidka"
+                id={id}
               />
             ) : null
           }

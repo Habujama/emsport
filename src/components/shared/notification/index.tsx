@@ -26,9 +26,9 @@ const Notification: FC<Props> = ({ title, description }) => {
       <h3 className="text-blue-900 font-medium text-xl text-center mb-2">
         {title}
       </h3>
-      <p className="font-semibold text-gray-700">
+      <div className="font-semibold text-gray-700">
         {renderRichText(description, options)}
-      </p>
+      </div>
     </div>
   )
 }
