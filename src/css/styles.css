@@ -5,7 +5,6 @@
 @tailwind utilities;
 
 body {
-  color: #121212;
   background-color: radial-gradient(
     circle,
     rgba(79, 79, 79, 1) 1%,

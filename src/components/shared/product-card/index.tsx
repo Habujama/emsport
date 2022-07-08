@@ -1,26 +1,32 @@
 import { motion } from 'framer-motion'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
 import Button from '../button/Button'
 import NumberFormat from '../../../utils/number-format'
+import singlePageUrl from '../../../utils/single-page-url'
+import Options from '../../shared/rich-text-options'
 
 interface Props {
-  title?: string
-  description?: any
-  price?: number
-  titlePhoto?: any
+  title: string
+  id: string
+  description: any
+  price: number
+  titlePhoto: any
   buttonText?: string
-  buttonTo?: string
+  urlPrefix?: '/produkty/' | '/pujcovna/'
 }
 
 const ProductCard = ({
   title,
+  id,
+  urlPrefix = '/produkty/',
   description,
   price,
   titlePhoto,
   buttonText = 'Ukaž mi ho!',
-  buttonTo,
 }: Props) => {
+  const itemUrl = singlePageUrl(title, id)
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -40,16 +46,16 @@ const ProductCard = ({
       <h4 className="text-xl text-blue-400 text-center font-bold leading-7 py-2">
         {title}
       </h4>
-      <p className="leading-5 text-gray-800">{description}</p>
-      {buttonTo ? (
-        <Button
-          className="block mx-auto mt-6"
-          buttonStyle="secondary"
-          to={buttonTo}
-        >
-          {buttonText}
-        </Button>
-      ) : null}
+      <div className="leading-5 text-gray-800">
+        {renderRichText(description, Options)}
+      </div>
+      <Button
+        className="block mx-auto mt-6"
+        buttonStyle="secondary"
+        to={`${urlPrefix}${itemUrl}`}
+      >
+        {buttonText}
+      </Button>
     </motion.div>
   )
 }
