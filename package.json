@@ -46,7 +46,7 @@
     "xmlhttprequest-ssl": "^1.6.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
+    "@babel/core": "^7.19.0",
     "@testing-library/react-hooks": "^7.0.2",
     "@types/jest": "^27.0.3",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
