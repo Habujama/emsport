@@ -65,7 +65,7 @@ const WinterRental: FC = () => {
             <td className={tableCell}>790</td>
             <td className={tableCell}>990</td>
             <td className={tableCell}>1&nbsp;490</td>
-            <td className={tableCell}>3&nbsp;490</td>
+            <td className={tableCell}>2&nbsp;990</td>
           </motion.tr>
           <motion.tr>
             <td className={tableCell}>
@@ -77,7 +77,7 @@ const WinterRental: FC = () => {
             <td className={tableCell}>990</td>
             <td className={tableCell}>1&nbsp;290</td>
             <td className={tableCell}>1&nbsp;990</td>
-            <td className={tableCell}>4&nbsp;490</td>
+            <td className={tableCell}>3&nbsp;990</td>
           </motion.tr>
           <motion.tr>
             <td className={tableCell}>
