@@ -1,27 +1,27 @@
-import { FC } from 'react'
-import { motion } from 'framer-motion'
-import classNames from 'classnames'
-import { StaticImage } from 'gatsby-plugin-image'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FC } from "react"
+import { motion } from "framer-motion"
+import classNames from "classnames"
+import { StaticImage } from "gatsby-plugin-image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faSnowflake,
   faTools,
   faStopwatch20,
   faBatteryFull,
-} from '@fortawesome/free-solid-svg-icons'
+} from "@fortawesome/free-solid-svg-icons"
 
-import { faSmileWink } from '@fortawesome/free-regular-svg-icons'
+import { faSmileWink } from "@fortawesome/free-regular-svg-icons"
 
-import Card from '../shared/card'
-import PageTitle from '../shared/page-title'
+import Card from "../shared/card"
+import PageTitle from "../shared/page-title"
 
 const Service: FC = () => {
-  const faImageLiCss = classNames('text-blue-400 text-3xl self-center')
+  const faImageLiCss = classNames("text-blue-400 text-3xl self-center")
   const ImageCircle = classNames(
-    'lg:border-2 lg:border-solid lg:border-white lg:rounded-full lg:p-4 mr-4'
+    "lg:border-2 lg:border-solid lg:border-white lg:rounded-full lg:p-4 mr-4"
   )
 
-  const phraseCss = classNames('text-2xl font-bold self-center')
+  const phraseCss = classNames("text-2xl font-bold self-center")
 
   return (
     <div className="flex flex-col p-4">
@@ -146,11 +146,11 @@ const Service: FC = () => {
         >
           <span className="text-xl text-center space-y-2">
             <p className="">
-              Naše hodinová sazba je{' '}
-              <strong>400&nbsp;Kč&nbsp;+&nbsp;materiál</strong>.
+              Naše hodinová sazba je{" "}
+              <strong>500&nbsp;Kč&nbsp;+&nbsp;materiál</strong>.
             </p>
             <p>
-              Spěcháš? Zaplať 600&nbsp;Kč za hodinu a&nbsp;o&nbsp;tvůj stroj
+              Spěcháš? Zaplať 700&nbsp;Kč za hodinu a&nbsp;o&nbsp;tvůj stroj
               se&nbsp;postaráme přednostně.
               <FontAwesomeIcon icon={faSmileWink} className="mt-1 ml-2" />
             </p>
