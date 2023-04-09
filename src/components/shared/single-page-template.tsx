@@ -93,6 +93,34 @@ const SinglePageTemplate = () => {
               </motion.span>
             ))}
         </motion.div>
+        <motion.div className="flex flex-col">
+          <motion.h3
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7 }}
+            className="text-2xl text-blue-300 font-barlow font-medium pr-2"
+          >
+            Vybral sis ho? Dej nám vědět!
+          </motion.h3>
+          <span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7 }}
+            className="text-xl text-center font-medium leading-10"
+          >
+            Napiš nám mail&nbsp;na{' '}
+            <a
+              href="mailto:info@emsportslany.cz"
+              className="underline hover:text-blue-300"
+            >
+              info@emsportslany.cz
+            </a>{' '}
+            nebo zavolej na&nbsp;
+            <a href="tel:775 710 011" className="underline hover:text-blue-300">
+              +420&nbsp;775&nbsp;710&nbsp;011
+            </a>
+          </span>
+        </motion.div>
       </motion.div>
 
       <div className="max-w-xs">
