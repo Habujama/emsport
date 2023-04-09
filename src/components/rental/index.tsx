@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion'
 import { useStaticQuery, graphql } from 'gatsby'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 
 import PageTitle from '../shared/page-title'
 import ProductCard from '../shared/product-card'
@@ -34,20 +32,6 @@ const Rental = () => {
     }
   `)
 
-  /* eslint-disable react/display-name */
-  const options = {
-    renderNode: {
-      [BLOCKS.PARAGRAPH]: (_, children) => <p className="mb-4">{children}</p>,
-      [BLOCKS.UL_LIST]: (_, children) => (
-        <ul className="list-disc whitespace-nowrap">{children}</ul>
-      ),
-    },
-    renderMark: {
-      [MARKS.BOLD]: text => <strong>{text}</strong>,
-    },
-  }
-  /* eslint-enable react/display-name */
-
   return (
     <div className="flex flex-col p-4">
       <PageTitle
@@ -63,7 +47,8 @@ const Rental = () => {
             return popis !== undefined ? (
               <ProductCard
                 title={titulek}
-                description={renderRichText(popis, options)}
+                id={id}
+                description={popis}
                 price={cenaZaDen}
                 titlePhoto={titulnFoto}
                 key={id}

@@ -1,8 +1,6 @@
 import { FC } from 'react'
 import { motion } from 'framer-motion'
 import { useStaticQuery, graphql } from 'gatsby'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 
 import ProductCard from '../shared/product-card'
 import PageTitle from '../shared/page-title'
@@ -41,17 +39,6 @@ const Shop: FC = () => {
     }
   `)
 
-  /* eslint-disable react/display-name */
-  const options = {
-    renderNode: {
-      [BLOCKS.PARAGRAPH]: (_, children) => <p className="mb-4">{children}</p>,
-    },
-    renderMark: {
-      [MARKS.BOLD]: text => <strong>{text}</strong>,
-    },
-  }
-  /* eslint-enable react/display-name */
-
   return (
     <div className="flex flex-col p-4">
       <PageTitle
@@ -65,7 +52,8 @@ const Shop: FC = () => {
             return popis !== undefined ? (
               <ProductCard
                 title={titulek}
-                description={renderRichText(popis, options)}
+                id={id}
+                description={popis}
                 price={cena}
                 titlePhoto={titulnFoto}
                 key={id}
