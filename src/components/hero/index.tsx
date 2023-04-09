@@ -26,7 +26,7 @@ const Hero: FC = () => {
           a&nbsp;funkční oblečení.
         </motion.h2>
       </div>
-      {breakpoints.sm ? null : (
+      {breakpoints.md ? null : (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -48,7 +48,7 @@ const Hero: FC = () => {
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 100, scale: 1.1 }}
+            animate={{ opacity: 1, x: 90, y: -30, scale: 1.1 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
             <StaticImage
@@ -62,23 +62,8 @@ const Hero: FC = () => {
             />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 10 }}
-            transition={{ duration: 1, delay: 0.1 }}
-          >
-            <StaticImage
-              src="../../assets/hero/koula-tym.png"
-              alt="Martin Koula"
-              title="Martin Koula"
-              width={250}
-              placeholder="blurred"
-              layout="fixed"
-              className="mt-4 ml-2"
-            />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0, x: -220 }}
+            initial={{ opacity: 0, y: -120 }}
+            animate={{ opacity: 1, y: 0, x: -50 }}
             transition={{ duration: 1 }}
           >
             <StaticImage

@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 
 import Maty from './maty'
 import Tomas from './tomas'
-import Martin from './martin'
 import Monika from './monika'
 
 import Card from '../shared/card'
@@ -20,9 +19,6 @@ const Team: FC = () => {
         Náš tým
       </motion.h2>
       <div className="flex flex-col lg:flex-row">
-        <Card className="flex flex-col" cardBackgroundColor="bg-gray-800">
-          <Martin />
-        </Card>
         <Card className="flex flex-col" cardBackgroundColor="bg-gray-800">
           <Tomas />
         </Card>
