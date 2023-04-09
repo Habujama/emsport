@@ -1,47 +1,30 @@
-import { FC } from "react"
-import { motion } from "framer-motion"
-import classNames from "classnames"
-import { StaticImage } from "gatsby-plugin-image"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { motion } from 'framer-motion'
+import classNames from 'classnames'
+import { StaticImage } from 'gatsby-plugin-image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faSnowflake,
   faTools,
   faStopwatch20,
   faBatteryFull,
-} from "@fortawesome/free-solid-svg-icons"
+} from '@fortawesome/free-solid-svg-icons'
 
-import { faSmileWink } from "@fortawesome/free-regular-svg-icons"
+import { faSmileWink } from '@fortawesome/free-regular-svg-icons'
 
-import Card from "../shared/card"
-import PageTitle from "../shared/page-title"
+import Card from '../shared/card'
+import PageTitle from '../shared/page-title'
 
-const Service: FC = () => {
-  const faImageLiCss = classNames("text-blue-400 text-3xl self-center")
+const Service = () => {
+  const faImageLiCss = classNames('text-blue-400 text-3xl self-center')
   const ImageCircle = classNames(
-    "lg:border-2 lg:border-solid lg:border-white lg:rounded-full lg:p-4 mr-4"
+    'lg:border-2 lg:border-solid lg:border-white lg:rounded-full lg:p-4 mr-4'
   )
 
-  const phraseCss = classNames("text-2xl font-bold self-center")
+  const phraseCss = classNames('text-2xl font-bold self-center')
 
   return (
     <div className="flex flex-col p-4">
       <div className="flex flex-col sm:flex-row mx-auto mb-8">
-        <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-        >
-          <StaticImage
-            src="../../assets/hero/koula-tym.png"
-            alt="Martin Koula"
-            title="Martin Koula"
-            height={354}
-            placeholder="blurred"
-            layout="fixed"
-            className="sm:-mt-4 sm:-mr-6"
-          />
-        </motion.div>
-
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
@@ -51,20 +34,20 @@ const Service: FC = () => {
             src="../../assets/hero/tomas-tym.png"
             alt="Tomáš Řenč"
             title="Tomáš Řenč"
-            height={320}
+            height={300}
             placeholder="blurred"
             layout="fixed"
-            className="-mt-32 sm:mt-4 sm:-ml-6"
+            className="sm:mt-4 sm:-ml-6"
           />
         </motion.div>
       </div>
       <PageTitle
         title="Servis kol"
-        description="O&nbsp;servis se u&nbsp;nás starají
-        dva&nbsp;největší borci široko daleko. Pravidelně je
-        posíláme na školení a&nbsp;v&nbsp;dílně mají to
-        nejlepší vybavení. Naši mechanici
-        Tomáš Řenč a&nbsp;Martin Koula mají
+        description="O&nbsp;servis se u&nbsp;nás stará
+        &nbsp;největší borec široko daleko. Pravidelně ho
+        posíláme na školení a&nbsp;v&nbsp;dílně má to
+        nejlepší vybavení. Náš mechanik
+        Tomáš Řenč má
         navíc zkušenosti z&nbsp;profi závodů po&nbsp;celém světě a &nbsp;ladění
         vlastních špičkových&nbsp;kol."
       />
@@ -146,7 +129,7 @@ const Service: FC = () => {
         >
           <span className="text-xl text-center space-y-2">
             <p className="">
-              Naše hodinová sazba je{" "}
+              Naše hodinová sazba je{' '}
               <strong>500&nbsp;Kč&nbsp;+&nbsp;materiál</strong>.
             </p>
             <p>
