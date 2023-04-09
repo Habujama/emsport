@@ -1,4 +1,3 @@
-import { FC, useState } from 'react'
 import { motion } from 'framer-motion'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
@@ -14,14 +13,14 @@ interface Props {
   buttonTo?: string
 }
 
-const ProductCard: FC<Props> = ({
+const ProductCard = ({
   title,
   description,
   price,
   titlePhoto,
   buttonText = 'Ukaž mi ho!',
   buttonTo,
-}) => {
+}: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}

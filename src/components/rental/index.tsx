@@ -1,4 +1,3 @@
-import { FC } from 'react'
 import { motion } from 'framer-motion'
 import { useStaticQuery, graphql } from 'gatsby'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
@@ -6,9 +5,8 @@ import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 
 import PageTitle from '../shared/page-title'
 import ProductCard from '../shared/product-card'
-import WinterRental from './winter-rental'
 
-const Rental: FC = () => {
+const Rental = () => {
   const { allContentfulEntry } = useStaticQuery(graphql`
     query {
       allContentfulEntry {
@@ -59,7 +57,6 @@ const Rental: FC = () => {
         si&nbsp;vyzkoušet elektrokolo a&nbsp;zjistit, že už na jiným kole jezdit
         nebudeš? Půjč si&nbsp;to&nbsp;u&nbsp;nás!"
       />
-      <WinterRental />
       <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-4 gap-y-4 my-16 mx-auto">
         {allContentfulEntry.edges.map(
           ({ node: { titulek, cenaZaDen, popis, id, titulnFoto } }) => {

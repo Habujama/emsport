@@ -22,9 +22,6 @@ const Partners: FC = () => {
 
   return (
     <div className="flex flex-col p-4">
-      <h2 className="text-2xl sm:text-4xl font-bold text-center sm:pt-16 mb-8">
-        Máme pro tebe kola a doplňky od těchhle borců
-      </h2>
       <div className="flex space-x-4 items-center self-center rounded-md sm:rounded-none p-8 sm:p-0">
         {allContentfulAsset.edges.map(({ node }) => (
           <div
