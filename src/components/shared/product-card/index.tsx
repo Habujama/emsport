@@ -13,6 +13,7 @@ interface Props {
   description: any
   price: number
   titlePhoto: any
+  showButton: boolean
   buttonText?: string
   urlPrefix?: '/produkty/' | '/pujcovna/'
 }
@@ -24,6 +25,7 @@ const ProductCard = ({
   description,
   price,
   titlePhoto,
+  showButton = true,
   buttonText = 'Ukaž mi ho!',
 }: Props) => {
   const itemUrl = singlePageUrl(title, id)
@@ -49,13 +51,15 @@ const ProductCard = ({
       <div className="leading-5 text-gray-800">
         {renderRichText(description, Options)}
       </div>
-      <Button
-        className="block mx-auto mt-6"
-        buttonStyle="secondary"
-        to={`${urlPrefix}${itemUrl}`}
-      >
-        {buttonText}
-      </Button>
+      {showButton && (
+        <Button
+          className="block mx-auto mt-6"
+          buttonStyle="secondary"
+          to={`${urlPrefix}${itemUrl}`}
+        >
+          {buttonText}
+        </Button>
+      )}
     </motion.div>
   )
 }

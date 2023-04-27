@@ -1,3 +1,4 @@
+import React from 'react'
 import { FC, useEffect } from 'react'
 import { motion, usePresence } from 'framer-motion'
 
@@ -64,6 +65,16 @@ const MenuItems: FC<Props> = ({ toggle }) => {
           onClick={toggle}
         >
           <h1 className="">Nabídka</h1>
+        </Button>
+
+        <Button
+          href="https://571953.myshoptet.com"
+          buttonStyle="ghost"
+          size="large"
+          className="sm:mr-4"
+          onClick={toggle}
+        >
+          <h1 className="whitespace-nowrap">E-shop</h1>
         </Button>
 
         <Button
