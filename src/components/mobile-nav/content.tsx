@@ -55,6 +55,17 @@ export const Content: FC<Props> = ({ toggle }) => {
         </motion.div>
       </Link>
 
+      <Link
+        to="https://571953.myshoptet.com"
+        rel="noopener noreferrer"
+        className={linkCss}
+        onClick={toggle}
+      >
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          E-shop
+        </motion.div>
+      </Link>
+
       <Link to="#kontakt" className={linkCss} onClick={toggle}>
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           Kontakt

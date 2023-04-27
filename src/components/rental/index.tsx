@@ -52,7 +52,7 @@ const Rental = () => {
                 price={cenaZaDen}
                 titlePhoto={titulnFoto}
                 key={id}
-                buttonText="Půjčte mi to!"
+                showButton={false}
               />
             ) : null
           }
