@@ -21,7 +21,7 @@ export const REGULAR_HOURS: RegularHours = {
     end: 17,
   },
   WEEKEND: {
-    start: 8.5,
+    start: 9,
     end: 11.5,
   },
 }
