@@ -2,6 +2,8 @@ import { FC } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'gatsby'
 import classNames from 'classnames'
+import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import OpeningHours from '../../components/opening-hours/opening-hours'
 
@@ -71,7 +73,13 @@ export const Content: FC<Props> = ({ toggle }) => {
           Kontakt
         </motion.div>
       </Link>
-
+      <a
+        href="https://www.facebook.com/emsportslany"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FontAwesomeIcon icon={faFacebook} />
+      </a>
       <motion.div className="flex">
         <OpeningHours />
       </motion.div>

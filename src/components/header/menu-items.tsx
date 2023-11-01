@@ -1,6 +1,8 @@
 import React from 'react'
 import { FC, useEffect } from 'react'
 import { motion, usePresence } from 'framer-motion'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 
 import Button from '../shared/button/Button'
 import OpeningHours from '../../components/opening-hours/opening-hours'
@@ -85,6 +87,13 @@ const MenuItems: FC<Props> = ({ toggle }) => {
           onClick={toggle}
         >
           <h1 className="">Kontakt</h1>
+        </Button>
+        <Button
+          buttonStyle="ghost"
+          href="https://www.facebook.com/emsportslany"
+          target="_blank"
+        >
+          <FontAwesomeIcon icon={faFacebook} />
         </Button>
       </motion.div>
 
