@@ -6,32 +6,40 @@ import ProductCard from '../shared/product-card'
 import WinterRental from './winter-rental'
 
 const Rental = () => {
-  const { allContentfulEntry } = useStaticQuery(graphql`
-    query {
-      allContentfulEntry {
-        edges {
-          node {
-            id
-            ... on ContentfulPujcovna {
+  const { allContentfulEntry, allContentfulTabulkaZimniPujcovny } =
+    useStaticQuery(graphql`
+      query {
+        allContentfulEntry {
+          edges {
+            node {
               id
-              cenaZaDen
-              popis {
-                raw
-              }
-              titulek
-              titulnFoto {
-                gatsbyImageData(
-                  height: 200
-                  placeholder: BLURRED
-                  formats: AUTO
-                )
+              ... on ContentfulPujcovna {
+                id
+                cenaZaDen
+                popis {
+                  raw
+                }
+                titulek
+                titulnFoto {
+                  gatsbyImageData(
+                    height: 200
+                    placeholder: BLURRED
+                    formats: AUTO
+                  )
+                }
               }
             }
           }
         }
+        allContentfulTabulkaZimniPujcovny {
+          edges {
+            node {
+              zobrazitZimnPjovnu
+            }
+          }
+        }
       }
-    }
-  `)
+    `)
 
   return (
     <div className="flex flex-col p-4">
@@ -42,7 +50,9 @@ const Rental = () => {
         si&nbsp;vyzkoušet elektrokolo a&nbsp;zjistit, že už na jiným kole jezdit
         nebudeš? Půjč si&nbsp;to&nbsp;u&nbsp;nás!"
       />
-      <WinterRental />
+      {allContentfulTabulkaZimniPujcovny.edges[0].node.zobrazitZimnPjovnu && (
+        <WinterRental />
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-4 gap-y-4 my-16 mx-auto">
         {allContentfulEntry.edges.map(
           ({ node: { titulek, cenaZaDen, popis, id, titulnFoto } }) => {
