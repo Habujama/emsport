@@ -1,22 +1,23 @@
-import React from 'react'
-import classNames from 'classnames'
-import { useStaticQuery, graphql } from 'gatsby'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faIdCard, faMoneyBillWave } from '@fortawesome/free-solid-svg-icons'
-import { motion } from 'framer-motion'
+import React from "react"
+import classNames from "classnames"
+import { useStaticQuery, graphql } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faIdCard, faMoneyBillWave } from "@fortawesome/free-solid-svg-icons"
+import { motion } from "framer-motion"
 
-import Card from '../shared/card'
+import Card from "../shared/card"
 
 const WinterRental = () => {
-  const tableRow = classNames('text-sm sm:text-lg p-2 sm:p-4')
-  const tableCell = classNames('text-sm sm:text-lg text-center p-2 sm:p-4')
-  const itemTitle = classNames('font-bold text-xs sm:text-lg')
+  const tableRow = classNames("text-sm sm:text-lg p-2 sm:p-4")
+  const tableCell = classNames("text-sm sm:text-lg text-center p-2 sm:p-4")
+  const itemTitle = classNames("font-bold text-xs sm:text-lg")
 
   const formatNumber = (value: number): string =>
-    new Intl.NumberFormat('cs-CZ', {
-      style: 'currency',
-      currency: 'CZK',
+    new Intl.NumberFormat("cs-CZ", {
+      style: "currency",
+      currency: "CZK",
       maximumFractionDigits: 0,
+      minimumFractionDigits: 0,
     }).format(value)
 
   const { allContentfulTabulkaZimniPujcovny } = useStaticQuery(graphql`
@@ -73,7 +74,7 @@ const WinterRental = () => {
             className="hidden sm:inline-block mx-2"
           />
           a&nbsp;zálohu&nbsp;
-          <strong>{formatNumber(ceny.zaloha)}</strong>{' '}
+          <strong>{formatNumber(ceny.zaloha)}</strong>{" "}
           <FontAwesomeIcon
             icon={faMoneyBillWave}
             className="hidden sm:inline-block mx-2"
@@ -173,7 +174,7 @@ const WinterRental = () => {
             </motion.tr>
             <motion.tr>
               <td className={tableCell}>
-                <h3 className={itemTitle}>Střešní box</h3>
+                <h3 className={itemTitle}>Vak na boty</h3>
               </td>
               <td className={tableCell}>{formatNumber(ceny.boxNaVikend)}</td>
               <td className={tableCell}>{formatNumber(ceny.boxNaTyden)}</td>
