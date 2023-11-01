@@ -1,7 +1,6 @@
-import { FC } from 'react'
 import classNames from 'classnames'
 
-const Footer: FC = () => {
+const Footer = () => {
   const link = classNames('underline hover:no-underline')
   return (
     <footer
