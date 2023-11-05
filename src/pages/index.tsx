@@ -1,4 +1,3 @@
-import { FC } from 'react'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import { useStaticQuery, graphql } from 'gatsby'
 
@@ -11,7 +10,7 @@ import Partners from '../components/partners'
 import Team from '../components/team'
 import Notification from '../components/shared/notification'
 
-const IndexPage: FC = () => {
+const IndexPage = () => {
   const breakpoints = useBreakpoint()
 
   const { allContentfulNotifikace } = useStaticQuery(graphql`
