@@ -39,14 +39,11 @@ const Header: FC<Props> = ({ siteTitle }) => {
     'active:transition-shadow active:duration-200 active:shadow-focus-blue-100'
   )
 
-  const headerCss = classNames(
-    'sticky flex top-0 font-barlow text-lg px-6 z-30',
-    {
-      'bg-header-gradient text-md shadow-md py-4': isScrolling && isNotMobile,
-      'bg-black-900': isScrolling && !isNotMobile,
-      'py-6': !isScrolling,
-    }
-  )
+  const headerCss = classNames('sticky flex top-0 text-lg px-6 z-30', {
+    'bg-header-gradient text-md shadow-md py-4': isScrolling && isNotMobile,
+    'bg-black-900': isScrolling && !isNotMobile,
+    'py-6': !isScrolling,
+  })
 
   return (
     <motion.header

@@ -15,7 +15,7 @@ const NotFoundPage: FC = () => (
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
-        className="text-5xl font-barlow font-semibold text-center uppercase py-8 sm:py-16"
+        className="text-5xl   font-semibold text-center uppercase py-8 sm:py-16"
       >
         404: Kolečko se polámalo
       </motion.h2>

@@ -18,7 +18,7 @@ const Maty: FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
-          className="text-3xl font-barlow font-semibold pt-4 sm:pt-10 text-justify md:text-left"
+          className="text-3xl   font-semibold pt-4 sm:pt-10 text-justify md:text-left"
         >
           Maty Matoušek
         </motion.h2>

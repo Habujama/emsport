@@ -1,21 +1,21 @@
-import React from "react"
-import classNames from "classnames"
-import { useStaticQuery, graphql } from "gatsby"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faIdCard, faMoneyBillWave } from "@fortawesome/free-solid-svg-icons"
-import { motion } from "framer-motion"
+import React from 'react'
+import classNames from 'classnames'
+import { useStaticQuery, graphql } from 'gatsby'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIdCard, faMoneyBillWave } from '@fortawesome/free-solid-svg-icons'
+import { motion } from 'framer-motion'
 
-import Card from "../shared/card"
+import Card from '../shared/card'
 
 const WinterRental = () => {
-  const tableRow = classNames("text-sm sm:text-lg p-2 sm:p-4")
-  const tableCell = classNames("text-sm sm:text-lg text-center p-2 sm:p-4")
-  const itemTitle = classNames("font-bold text-xs sm:text-lg")
+  const tableRow = classNames('text-sm sm:text-lg p-2 sm:p-4')
+  const tableCell = classNames('text-sm sm:text-lg text-center p-2 sm:p-4')
+  const itemTitle = classNames('font-bold text-xs sm:text-lg')
 
   const formatNumber = (value: number): string =>
-    new Intl.NumberFormat("cs-CZ", {
-      style: "currency",
-      currency: "CZK",
+    new Intl.NumberFormat('cs-CZ', {
+      style: 'currency',
+      currency: 'CZK',
       maximumFractionDigits: 0,
       minimumFractionDigits: 0,
     }).format(value)
@@ -74,7 +74,7 @@ const WinterRental = () => {
             className="hidden sm:inline-block mx-2"
           />
           a&nbsp;zálohu&nbsp;
-          <strong>{formatNumber(ceny.zaloha)}</strong>{" "}
+          <strong>{formatNumber(ceny.zaloha)}</strong>{' '}
           <FontAwesomeIcon
             icon={faMoneyBillWave}
             className="hidden sm:inline-block mx-2"
@@ -104,9 +104,29 @@ const WinterRental = () => {
             </motion.tr>
             <motion.tr>
               <td className={tableCell}>
-                <h3 className={itemTitle}>Dětský komplet</h3>
+                <h3 className={itemTitle}>Dětský komplet - lyže</h3>
                 <p className="hidden sm:block">
                   (do 15 let - boty, lyže, hůlky, lyžařská přilba)
+                </p>
+              </td>
+              <td className={tableCell}>
+                {formatNumber(ceny.cenaDetskehoZaVkend)}
+              </td>
+              <td className={tableCell}>
+                {formatNumber(ceny.cenaDetskehoZaTyden)}
+              </td>
+              <td className={tableCell}>
+                {formatNumber(ceny.cenaDetskehoZa2Tydny)}
+              </td>
+              <td className={tableCell}>
+                {formatNumber(ceny.cenaDetskehoZaSezonu)}
+              </td>
+            </motion.tr>
+            <motion.tr>
+              <td className={tableCell}>
+                <h3 className={itemTitle}>Dětský komplet - snowboard</h3>
+                <p className="hidden sm:block">
+                  (do 15 let - boty, snowboard, lyžařská přilba)
                 </p>
               </td>
               <td className={tableCell}>
@@ -204,6 +224,12 @@ const WinterRental = () => {
           <motion.tr>
             <td className={tableCell}>
               <h3 className={itemTitle}>Lyže nad 140 cm</h3>
+            </td>
+            <td className={tableCell}>{formatNumber(ceny.servisNad140Cm)}</td>
+          </motion.tr>
+          <motion.tr>
+            <td className={tableCell}>
+              <h3 className={itemTitle}>Snowboard</h3>
             </td>
             <td className={tableCell}>{formatNumber(ceny.servisNad140Cm)}</td>
           </motion.tr>

@@ -15,17 +15,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GatsbyJS`,
-        description: 'Gatsby Starter Package',
-        categories: ['education', 'entertainment'],
-        short_name: `GatsbyJS`,
+        name: `eM Sport Slaný`,
+        description: 'Kola, lyže, bajky pro všechny sporťáky',
+        categories: ['sports', 'health & fitness'],
+        short_name: `eMSport`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
-        icon: 'src/assets/header/favicona.png', // This path is relative to the root of the site.
+        icon: 'src/assets/header/favicona.png',
         icon_options: {
-          // For all the options available, please see the additional resources below.
           purpose: 'any maskable',
         },
       },
@@ -38,14 +37,7 @@ module.exports = {
             {
               family: 'Roboto',
               subsets: ['latin-ext'],
-              // 100, 300, 700, 900 are Rentier specific
               variants: ['100', '300', '400', '500', '700', '900'],
-              strategy: 'cdn',
-            },
-            {
-              family: 'Barlow Semi Condensed',
-              subsets: ['latin-ext'],
-              variants: ['100', '300', '400', '500', '800'],
               strategy: 'cdn',
             },
           ],

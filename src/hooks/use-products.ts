@@ -5,17 +5,6 @@ import {
 } from 'gatsby-source-contentful/rich-text'
 
 type ProductsQuery = {
-  allContentfulPujcovna: {
-    edges: Array<{
-      node: {
-        id: string
-        titulek: string
-        cenaZaDen: number
-        titulnFoto?: any
-        popis: RenderRichTextData<ContentfulRichTextGatsbyReference>
-      }
-    }>
-  }
   allContentfulTopProducts: {
     edges: Array<{
       node: {
@@ -34,21 +23,6 @@ type ProductsQuery = {
 export const useProducts = () => {
   const data = useStaticQuery<ProductsQuery>(graphql`
     query {
-      allContentfulPujcovna {
-        edges {
-          node {
-            id
-            titulek
-            cenaZaDen
-            titulnFoto {
-              gatsbyImageData(width: 520, placeholder: BLURRED, formats: AUTO)
-            }
-            popis {
-              raw
-            }
-          }
-        }
-      }
       allContentfulTopProducts {
         edges {
           node {
@@ -73,14 +47,6 @@ export const useProducts = () => {
     }
   `)
 
-  const pujcovna = data.allContentfulPujcovna.edges.map(item => ({
-    id: item.node.id,
-    titulek: item.node.titulek,
-    cenaZaDen: item.node.cenaZaDen,
-    titulnFoto: item.node.titulnFoto,
-    popis: item.node.popis,
-  }))
-
   const topProducts = data.allContentfulTopProducts.edges.map(item => ({
     id: item.node.id,
     titulek: item.node.titulek,
@@ -91,7 +57,7 @@ export const useProducts = () => {
     detail: item.node.detail,
   }))
 
-  const products = { topProducts, pujcovna }
+  const products = { topProducts }
 
   return products
 }

@@ -35,7 +35,7 @@ const SinglePageTemplate = () => {
     <Layout>
       {productsById && (
         <SEO
-          title={`${productsById.titulek} | Zonky.cz`}
+          title={`${productsById.titulek}`}
           description={renderRichText(productsById.popis, Options)}
         />
       )}
@@ -98,7 +98,7 @@ const SinglePageTemplate = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7 }}
-            className="text-2xl text-blue-300 font-barlow font-medium pr-2"
+            className="text-2xl text-blue-300   font-medium pr-2"
           >
             Vybral sis ho? Dej nám vědět!
           </motion.h3>
