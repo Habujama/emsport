@@ -102,7 +102,7 @@ const SinglePageTemplate = () => {
           >
             Vybral sis ho? Dej nám vědět!
           </motion.h3>
-          <span
+          <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7 }}
@@ -119,7 +119,7 @@ const SinglePageTemplate = () => {
             <a href="tel:775 710 011" className="underline hover:text-blue-300">
               +420&nbsp;775&nbsp;710&nbsp;011
             </a>
-          </span>
+          </motion.span>
         </motion.div>
       </motion.div>
 

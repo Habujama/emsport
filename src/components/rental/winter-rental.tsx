@@ -1,4 +1,3 @@
-import React from 'react'
 import classNames from 'classnames'
 import { useStaticQuery, graphql } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -62,7 +61,7 @@ const WinterRental = () => {
         cardBackgroundColor="bg-blue-100 text-gray-900"
         margin="mt-12"
       >
-        <div
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
@@ -79,7 +78,7 @@ const WinterRental = () => {
             icon={faMoneyBillWave}
             className="hidden sm:inline-block mx-2"
           />
-        </div>
+        </motion.div>
         <motion.table
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
