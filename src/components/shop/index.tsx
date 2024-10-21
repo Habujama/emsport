@@ -67,7 +67,7 @@ const Shop: FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
-        className="text-3xl text-blue-300 text-center font-barlow font-medium pb-4"
+        className="text-3xl text-blue-300 text-center   font-medium pb-4"
       >
         Nenašel jsi, co hledáš? Dej nám vědět, seženeme ti to!
       </motion.h2>

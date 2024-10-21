@@ -20,7 +20,7 @@ const Monika: FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
-          className="text-3xl font-barlow font-semibold text-justify md:text-left pt-4 sm:pt-10"
+          className="text-3xl   font-semibold text-justify md:text-left pt-4 sm:pt-10"
         >
           Monika Malečková
         </motion.h2>

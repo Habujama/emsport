@@ -56,7 +56,7 @@ const Service = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
-          className="text-2xl text-blue-300 text-center font-barlow font-medium sm:py-10"
+          className="text-2xl text-blue-300 text-center   font-medium sm:py-10"
         >
           Svěř nám do servisu svoje kolo. Poladíme ti&nbsp;ho&nbsp;tak,
           že&nbsp;budeš koukat!

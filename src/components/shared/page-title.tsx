@@ -13,7 +13,7 @@ export const PageTitle: FC<Props> = ({ title, description }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="text-5xl font-barlow font-semibold text-center uppercase pt-8 sm:pt-12"
+        className="text-5xl   font-semibold text-center uppercase pt-8 sm:pt-12"
       >
         {title}
       </motion.h2>

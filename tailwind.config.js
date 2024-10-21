@@ -6,7 +6,6 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Roboto'],
-      barlow: ['Barlow Semi Condensed'],
     },
     extend: {
       backgroundImage: () => ({

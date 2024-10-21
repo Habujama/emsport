@@ -33,7 +33,7 @@ const Catchphrase: FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
-          className="text-2xl font-barlow font-medium sm:pt-16 text-justify md:text-left"
+          className="text-2xl font-medium sm:pt-16 text-justify md:text-left"
         >
           Přímo na prodejně pro tebe máme víc jak{' '}
           <strong>100&nbsp;modelů&nbsp;kol</strong> - silničky, gravely, horský

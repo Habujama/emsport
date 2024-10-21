@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
 import Button from '../button/Button'
@@ -12,8 +12,8 @@ interface Props {
   id: string
   description: any
   price: number
-  titlePhoto: any
-  showButton: boolean
+  titlePhoto: IGatsbyImageData
+  showButton?: boolean
   buttonText?: string
   urlPrefix?: '/produkty/' | '/pujcovna/'
 }
