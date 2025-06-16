@@ -40,36 +40,6 @@ const MenuItems: FC<Props> = ({ toggle }) => {
         className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 items-center justify-between outline-none"
       >
         <Button
-          to="/servis"
-          buttonStyle="ghost"
-          size="large"
-          className="sm:mr-4"
-          onClick={toggle}
-        >
-          <h1 className="">Servis</h1>
-        </Button>
-
-        <Button
-          to="/pujcovna"
-          buttonStyle="ghost"
-          size="large"
-          className="sm:mr-4"
-          onClick={toggle}
-        >
-          <h1 className="">Půjčovna</h1>
-        </Button>
-
-        <Button
-          to="/nabidka"
-          buttonStyle="ghost"
-          size="large"
-          className="sm:mr-4"
-          onClick={toggle}
-        >
-          <h1 className="">Nabídka</h1>
-        </Button>
-
-        <Button
           href="https://571953.myshoptet.com"
           buttonStyle="ghost"
           size="large"
@@ -80,13 +50,33 @@ const MenuItems: FC<Props> = ({ toggle }) => {
         </Button>
 
         <Button
+          to="/servis"
+          buttonStyle="ghost"
+          size="large"
+          className="sm:mr-4"
+          onClick={toggle}
+        >
+          <h1 className="whitespace-nowrap">Servis</h1>
+        </Button>
+
+        <Button
+          to="/pujcovna"
+          buttonStyle="ghost"
+          size="large"
+          className="sm:mr-4"
+          onClick={toggle}
+        >
+          <h1 className="whitespace-nowrap">Půjčovna</h1>
+        </Button>
+
+        <Button
           to="/#kontakt"
           buttonStyle="ghost"
           size="large"
           className="sm:mr-4"
           onClick={toggle}
         >
-          <h1 className="">Kontakt</h1>
+          <h1 className="whitespace-nowrap">Kontakt</h1>
         </Button>
         <Button
           buttonStyle="ghost"

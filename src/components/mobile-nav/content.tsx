@@ -39,6 +39,17 @@ export const Content: FC<Props> = ({ toggle }) => {
       variants={variants}
       className="absolute left-0 top-0 flex flex-col space-y-4 items-center text-xl outline-none w-screen h-screen p-6 mt-24"
     >
+      <Link
+        to="https://571953.myshoptet.com"
+        rel="noopener noreferrer"
+        className={linkCss}
+        onClick={toggle}
+      >
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          E-shop
+        </motion.div>
+      </Link>
+
       <Link to="/servis" className={linkCss} onClick={toggle}>
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           Servis
@@ -48,23 +59,6 @@ export const Content: FC<Props> = ({ toggle }) => {
       <Link to="/pujcovna" className={linkCss} onClick={toggle}>
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           Půjčovna
-        </motion.div>
-      </Link>
-
-      <Link to="/nabidka" className={linkCss} onClick={toggle}>
-        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-          Nabídka
-        </motion.div>
-      </Link>
-
-      <Link
-        to="https://571953.myshoptet.com"
-        rel="noopener noreferrer"
-        className={linkCss}
-        onClick={toggle}
-      >
-        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-          E-shop
         </motion.div>
       </Link>
 
