@@ -6,6 +6,7 @@ import Tomas from './tomas'
 import Monika from './monika'
 
 import Card from '../shared/card'
+import Adela from './adela'
 
 const Team: FC = () => {
   return (
@@ -22,13 +23,16 @@ const Team: FC = () => {
         <Card className="flex flex-col" cardBackgroundColor="bg-gray-800">
           <Tomas />
         </Card>
-      </div>
-      <div className="flex flex-col lg:flex-row mb-12">
         <Card className="flex flex-col" cardBackgroundColor="bg-gray-800">
           <Maty />
         </Card>
+      </div>
+      <div className="flex flex-col lg:flex-row mb-12">
         <Card className="flex flex-col" cardBackgroundColor="bg-gray-800">
           <Monika />
+        </Card>
+        <Card className="flex flex-col" cardBackgroundColor="bg-gray-800">
+          <Adela />
         </Card>
       </div>
     </>
