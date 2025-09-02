@@ -28,25 +28,7 @@ const Maty: FC = () => {
         <p>
           Běžec a&nbsp;cyklista bez ambicí na&nbsp;vítězství. eMSPORT založil
           před 10 lety, protože měl ke&nbsp;sportu vždy blízko a&nbsp;chtěl k
-          němu vést i&nbsp;ostatní. Je také majitelem{' '}
-          <a
-            href="https://vinotekaslany.cz/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-blue-300"
-          >
-            Vino&nbsp;Bohemia
-          </a>{' '}
-          a jejího projektu{' '}
-          <a
-            href="https://www.mamradvino.cz/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-blue-300"
-          >
-            Mám&nbsp;rád&nbsp;víno
-          </a>
-          .
+          němu vést i&nbsp;ostatní.
         </p>
       </div>
     </>

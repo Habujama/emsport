@@ -34,7 +34,22 @@ const Hero: FC = () => {
         >
           <motion.div
             initial={{ opacity: 0, y: 0 }}
-            animate={{ opacity: 1, y: 110 }}
+            animate={{ opacity: 1, y: 120, x: 120 }}
+            transition={{ duration: 1, delay: 0.1 }}
+            className="absolute"
+          >
+            <StaticImage
+              src="../../assets/hero/adela.png"
+              alt="Adéla Maternová"
+              title="Adéla Maternová"
+              width={450}
+              placeholder="blurred"
+              layout="fixed"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 1, y: 110, x: -5 }}
             transition={{ duration: 1, delay: 0.1 }}
           >
             <StaticImage
