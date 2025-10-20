@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import SEO from "../components/head"
 import Service from '../components/servis/index'
 
 const Servis: FC = () => {

@@ -4,12 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSadCry } from '@fortawesome/free-regular-svg-icons'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
 import Button from '../components/shared/button/Button'
+import HeadComponent from '../components/head'
 
 const NotFoundPage: FC = () => (
   <Layout>
-    <SEO title="404: Kolečko se polámalo" />
     <div className="flex flex-col text-center mb-32">
       <motion.h2
         initial={{ opacity: 0 }}
@@ -34,3 +33,13 @@ const NotFoundPage: FC = () => (
 )
 
 export default NotFoundPage
+
+export function Head() {
+  return (
+    <HeadComponent
+      title="Kolečko se polámalo!"
+      description="Tohle nespravíme ani rychlospojkou. Zkus se prosím vrátit na hlavní stránku."
+      meta={[{ name: 'robots', content: 'index,follow' }]}
+    />
+  )
+}

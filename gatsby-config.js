@@ -29,45 +29,6 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: 'gatsby-plugin-webfonts',
-      options: {
-        fonts: {
-          google: [
-            {
-              family: 'Roboto',
-              subsets: ['latin-ext'],
-              variants: ['100', '300', '400', '500', '700', '900'],
-              strategy: 'cdn',
-            },
-          ],
-        },
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-prettier-eslint',
-      options: {
-        prettier: {
-          patterns: [
-            // the pattern "**/*.{js,jsx,ts,tsx}" is not used because we will rely on `eslint --fix`
-            '**/*.{css,scss,less}',
-            '**/*.{json,json5}',
-            '**/*.{graphql}',
-            '**/*.{md,mdx}',
-            '**/*.{html}',
-            '**/*.{yaml,yml}',
-          ],
-        },
-        eslint: {
-          patterns: '**/*.{js,jsx,ts,tsx}',
-          customOptions: {
-            fix: true,
-            cache: true,
-          },
-        },
-      },
-    },
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-breakpoints`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -79,15 +40,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    'gatsby-plugin-react-helmet',
-    {
-      resolve: `gatsby-plugin-loadable-components-ssr`,
-      options: {
-        // Whether replaceHydrateFunction should call ReactDOM.hydrate or ReactDOM.render
-        // Defaults to ReactDOM.render on develop and ReactDOM.hydrate on build
-        useHydrate: true,
-      },
-    },
     {
       resolve: 'gatsby-plugin-postcss',
       options: {
@@ -127,6 +79,5 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-    `gatsby-plugin-gatsby-cloud`,
   ],
 }

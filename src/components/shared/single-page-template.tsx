@@ -1,17 +1,16 @@
 import { useLocation } from '@reach/router'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { motion } from 'framer-motion'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, ImageDataLike } from 'gatsby-plugin-image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from '../../components/layout'
 import Button from '../../components/shared/button/Button'
-import SEO from '../../components/seo'
-
 import Options from '../shared/rich-text-options'
 import { useProducts } from '../../hooks/use-products'
 import NumberFormat from '../../utils/number-format'
+import HeadComponent from '../head'
 
 const SinglePageTemplate = () => {
   const currentUrl = useLocation()
@@ -25,21 +24,12 @@ const SinglePageTemplate = () => {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.2 },
     },
   }
 
   return (
     <Layout>
-      {productsById && (
-        <SEO
-          title={`${productsById.titulek}`}
-          description={renderRichText(productsById.popis, Options)}
-        />
-      )}
-
       <motion.div
         variants={container}
         className="bg-white rounded-md p-8 md:text-xl text-center text-black-900 shadow-inner mb-14"
@@ -49,7 +39,8 @@ const SinglePageTemplate = () => {
             {productsById?.titulnFoto && (
               <div className="pt-4 rounded-md px-8 shadow-inner border-solid border-2 border-blue-50">
                 <GatsbyImage
-                  image={getImage(productsById?.titulnFoto)}
+                  image={getImage(productsById.titulnFoto)!}
+                  alt={productsById.titulek || 'Produkt'}
                   className="row-start-2 row-span-1 md:row-start-1 md:col-start-1 md:col-span-1 shadow-md rounded-md mt-4"
                 />
                 {productsById?.cena && (
@@ -74,40 +65,44 @@ const SinglePageTemplate = () => {
             )}
           </span>
         </div>
+
         {productsById?.detail && (
           <div className="text-left text-black-500 bg-gray-200 shadow-inner p-8 rounded-md my-4 md:my-8">
             {renderRichText(productsById.detail, Options)}
           </div>
         )}
+
         <motion.div
           className="flex space-x-4 mt-2 md:mt-8"
           variants={container}
         >
-          {productsById?.fotogalerie &&
-            productsById.fotogalerie.map(foto => (
-              <motion.span
-                key={foto}
-                className="transform hover:scale-110 shadow-inner hover:shadow-md border-solid border-2 border-blue-50 rounded-md py-6"
-              >
-                <GatsbyImage image={getImage(foto)} />
-              </motion.span>
-            ))}
+          {productsById?.fotogalerie?.map(
+            (photo: ImageDataLike, index: number) => {
+              const img = getImage(photo)
+              return (
+                img && (
+                  <motion.span
+                    key={index}
+                    className="transform hover:scale-110 shadow-inner hover:shadow-md border-solid border-2 border-blue-50 rounded-md py-6"
+                  >
+                    <GatsbyImage image={img} alt="Fotogalerie" />
+                  </motion.span>
+                )
+              )
+            }
+          )}
         </motion.div>
+
         <motion.div className="flex flex-col">
           <motion.h3
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7 }}
-            className="text-2xl text-blue-300   font-medium pr-2"
+            className="text-2xl text-blue-300 font-medium pr-2"
           >
             Vybral sis ho? Dej nám vědět!
           </motion.h3>
-          <span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7 }}
-            className="text-xl text-center font-medium leading-10"
-          >
+          <span className="text-xl text-center font-medium leading-10">
             Napiš nám mail&nbsp;na{' '}
             <a
               href="mailto:info@emsportslany.cz"
@@ -116,7 +111,7 @@ const SinglePageTemplate = () => {
               info@emsportslany.cz
             </a>{' '}
             nebo zavolej na&nbsp;
-            <a href="tel:775 710 011" className="underline hover:text-blue-300">
+            <a href="tel:775710011" className="underline hover:text-blue-300">
               +420&nbsp;775&nbsp;710&nbsp;011
             </a>
           </span>
@@ -134,3 +129,19 @@ const SinglePageTemplate = () => {
 }
 
 export default SinglePageTemplate
+
+export function Head() {
+  const currentUrl = useLocation()
+  const id = currentUrl.pathname.substring(10, 46)
+  const products = useProducts()
+  const productsById = products.topProducts.find(
+    productsById => productsById.id === id
+  )
+  return (
+    <HeadComponent
+      title={productsById?.titulek ?? 'To si kup!'}
+      description={productsById?.popis}
+      meta={[{ name: 'robots', content: 'index,follow' }]}
+    />
+  )
+}
