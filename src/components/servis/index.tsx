@@ -130,11 +130,11 @@ const Service = () => {
           <span className="text-xl text-center space-y-2">
             <p className="">
               Naše hodinová sazba je{' '}
-              <strong>600&nbsp;Kč&nbsp;+&nbsp;materiál</strong>.
+              <strong>800&nbsp;Kč&nbsp;+&nbsp;materiál</strong>.
             </p>
             <p>
-              Spěcháš? Zaplať 800&nbsp;Kč za hodinu a&nbsp;o&nbsp;tvůj stroj
-              se&nbsp;postaráme přednostně.
+              Spěcháš? Zaplať 1&nbsp;00&nbsp;Kč za hodinu a&nbsp;o&nbsp;tvůj
+              stroj se&nbsp;postaráme přednostně.
               <FontAwesomeIcon icon={faSmileWink} className="mt-1 ml-2" />
             </p>
           </span>
