@@ -133,7 +133,7 @@ const Service = () => {
               <strong>800&nbsp;Kč&nbsp;+&nbsp;materiál</strong>.
             </p>
             <p>
-              Spěcháš? Zaplať 1&nbsp;00&nbsp;Kč za hodinu a&nbsp;o&nbsp;tvůj
+              Spěcháš? Zaplať 1&nbsp;000&nbsp;Kč za hodinu a&nbsp;o&nbsp;tvůj
               stroj se&nbsp;postaráme přednostně.
               <FontAwesomeIcon icon={faSmileWink} className="mt-1 ml-2" />
             </p>
