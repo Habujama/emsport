@@ -10,7 +10,7 @@ module.exports = {
     author: `Hanka Myšková`,
     keywords: ['fun', 'sport', 'service'],
     icon: 'src/assets/header/favicona.png',
-    image: 'src/assets/header/emsport-tym-cely.png',
+    image: "/social-preview.png",
     siteUrl: 'https://www.kolaslany.cz/',
     lang: 'cs',
   },
