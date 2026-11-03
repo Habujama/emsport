@@ -1,16 +1,14 @@
-import { FC } from 'react'
-/* import { 
-  motion, 
-  useViewportScroll,
-  useSpring,
-  useTransform
-} from 'framer-motion' */
-import { useStaticQuery, graphql } from 'gatsby'
+import { ReactNode } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
-import Header from '../components/header'
-import Footer from './shared/footer'
+import Header from "../components/header"
+import Footer from "./shared/footer"
 
-const Layout: FC = ({ children }) => {
+interface LayoutProps {
+  children: ReactNode
+}
+
+const Layout = ({ children }: LayoutProps) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

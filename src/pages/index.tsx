@@ -1,17 +1,18 @@
-import { useBreakpoint } from 'gatsby-plugin-breakpoints'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby"
+import { useMedia } from "react-use"
+import theme from "tailwindcss/defaultTheme"
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Hero from '../components/hero/index'
-import Catchphrase from '../components/catchphrase/index'
-import Partners from '../components/partners'
-import Team from '../components/team'
-import Notification from '../components/shared/notification'
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Hero from "../components/hero/index"
+import Catchphrase from "../components/catchphrase/index"
+import Partners from "../components/partners"
+import Team from "../components/team"
+import Notification from "../components/shared/notification"
+
+const { screens } = theme
 
 const IndexPage = () => {
-  const breakpoints = useBreakpoint()
-
   const { allContentfulNotifikace } = useStaticQuery(graphql`
     query {
       allContentfulNotifikace {
@@ -27,22 +28,22 @@ const IndexPage = () => {
     }
   `)
 
+  const isMobile = useMedia(`(max-width: ${screens.md})`)
+
   const NotificationContent = allContentfulNotifikace.edges[0].node
 
   return (
     <Layout>
       <SEO title="Hlavní stránka" />
       <Hero />
-      {NotificationContent ? (
+      {NotificationContent && (
         <Notification
           title={NotificationContent.titulek}
           description={NotificationContent.krtkText}
         />
-      ) : (
-        'neeee'
       )}
       <Catchphrase />
-      {breakpoints.sm || breakpoints.md ? null : <Partners />}
+      {!isMobile && <Partners />}
       <Team />
     </Layout>
   )
