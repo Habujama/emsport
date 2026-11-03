@@ -1,78 +1,53 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
+import { JSXElementConstructor, ReactElement } from "react"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-import { FC } from 'react'
-import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
-
-interface Props {
+interface SEOProps {
+  title?: string
   description?: string
-  meta?: any[]
-  title: string
+  pathname?: string
+  image?: string
+  children?: ReactElement<any, string | JSXElementConstructor<any>>
 }
 
-const SEO: FC<Props> = ({ description = '', meta = [], title }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            keywords
-            lang
-            author
-          }
-        }
-      }
-    `
-  )
+export const SEO = ({
+  title,
+  description,
+  image,
+  pathname,
+  children,
+}: SEOProps) => {
+  const {
+    title: defaultTitle,
+    description: defaultDescription,
+    image: defaultImage,
+    icon,
+    siteUrl,
+  } = useSiteMetadata()
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const seo = {
+    title: title || defaultTitle,
+    description: description || defaultDescription,
+    image: image ? `${siteUrl}${image}` : `${siteUrl}${defaultImage}`,
+    url: `${siteUrl}${pathname || ``}`,
+    icon: icon,
+  }
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang: site.siteMetadata.lang,
-      }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-      meta={[
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
-        },
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          name: `keywords`,
-          content: site.siteMetadata.keywords,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-      ].concat(meta)}
-    />
+    <>
+      <html lang="cs" />
+      <title>{seo.title}</title>
+      <meta
+        name="google-site-verification"
+        content="3IyNDTKxdA69x5yTCwCSQsLQlCh2fQVp0nvTzyZwkLo"
+      />
+      <meta name="title" content={seo.title} />
+      <meta name="description" content={seo.description} />
+      <meta name="image" content={seo.image} />
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:image" content={seo.image} />
+      {children}
+    </>
   )
 }
 

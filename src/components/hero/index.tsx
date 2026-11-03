@@ -1,10 +1,12 @@
-import { FC } from 'react'
-import { useBreakpoint } from 'gatsby-plugin-breakpoints'
-import { StaticImage } from 'gatsby-plugin-image'
-import { motion } from 'framer-motion'
+import { StaticImage } from "gatsby-plugin-image"
+import { useMedia } from "react-use"
+import { motion } from "framer-motion"
+import theme from "tailwindcss/defaultTheme"
 
-const Hero: FC = () => {
-  const breakpoints = useBreakpoint()
+const { screens } = theme
+
+const Hero = () => {
+  const isMobile = useMedia(`(max-width: ${screens.md})`)
   return (
     <div className="flex flex-col lg:flex-row space-between justify-center">
       <div className="flex flex-col max-w-md p-4 sm:p-0 mx-auto lg:mx-0 justify-center z-10">
@@ -26,7 +28,7 @@ const Hero: FC = () => {
           a&nbsp;funkční oblečení.
         </motion.h2>
       </div>
-      {breakpoints.md ? null : (
+      {!isMobile && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
