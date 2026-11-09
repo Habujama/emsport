@@ -45,7 +45,7 @@
     "eslint-plugin-react": "^7.34.1",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
-    "typescript": "^5.4.5"
+    "typescript": "^7.0.2"
   },
   "scripts": {
     "build": "gatsby build",
